@@ -410,6 +410,11 @@ _FM_ASH_PARTY_READY:
 	WaitButton
 	CloseMsg
 	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_HARBOR
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_HARBOR, 0, 24, 20, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
 	ReleaseAll
 	End
 
