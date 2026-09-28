@@ -3,15 +3,22 @@
 #include "global.h"
 
 #include "constants/maps.h"
+#include "constants/first_movie.h"
 
 #include "field_system.h"
 #include "save_local_field_data.h"
 
+/*
+ * First Movie vertical slice:
+ * A new save now enters the HGSS field engine through the temporary
+ * Mewtwo-lab map alias. Using warp 0 keeps coordinates tied to the map's
+ * existing event data while we replace the map with the dedicated lab.
+ */
 static const Location sLocation_PlayerRoom = {
-    .mapId = MAP_NEW_BARK_PLAYER_HOUSE_2F,
-    .warpId = 0xFFFFFFFF,
-    .x = 0x00000006,
-    .y = 0x00000006,
+    .mapId = MAP_FIRST_MOVIE_PROLOGUE_LAB,
+    .warpId = 0,
+    .x = 0,
+    .y = 0,
     .direction = 0x00000001,
 };
 
