@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_D35R0103.h"
 #include "constants/init_script_types.h"
 	.include "asm/macros/script.inc"
@@ -12,6 +13,7 @@
 	InitScriptEntryEnd
 
 scr_seq_D35R0103_map_scripts_2:
+	InitScriptGoToIfEqual VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_CLONE_LAB, _EV_scr_seq_D35R0103_015 + 1
 	InitScriptGoToIfEqual VAR_UNK_40A9, 0, _EV_scr_seq_D35R0103_000 + 1
 	InitScriptFrameTableEnd
 
