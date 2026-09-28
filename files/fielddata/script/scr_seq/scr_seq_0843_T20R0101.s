@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_T20R0101.h"
 #include "msgdata/msg/msg_0543_T20R0101.h"
 	.include "asm/macros/script.inc"
@@ -1365,29 +1366,32 @@ _1107:
 	End
 
 scr_seq_T20R0101_015:
-	ScrCmd_609
 	LockAll
-	ApplyMovement obj_T20R0101_assistantm, _113C
-	WaitMovement
-	BufferPlayersName 0
 	NPCMsg msg_0543_T20R0101_00056
+	WaitButton
 	CloseMsg
-	ApplyMovement obj_T20R0101_assistantm, _1148
-	WaitMovement
-	SetVar VAR_UNK_40FC, 3
+	NPCMsg msg_0543_T20R0101_00057
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0543_T20R0101_00058
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0543_T20R0101_00059
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0543_T20R0101_00060
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0543_T20R0101_00061
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_GIOVANNI_FACILITY
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_GIOVANNI_FACILITY, 0xFF, 5, 8, DIR_SOUTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
 	ReleaseAll
 	End
 
-	.balign 4, 0
-_113C:
-	WalkNormalWest 5
-	WalkNormalSouth
-	EndMovement
-
-	.balign 4, 0
-_1148:
-	WalkNormalNorth
-	WalkNormalEast 5
-	WalkOnSpotNormalSouth
-	EndMovement
 	.balign 4, 0
