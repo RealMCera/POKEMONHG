@@ -381,6 +381,7 @@ scr_seq_T20R0201_005:
 
 scr_seq_T20R0201_007:
 	LockAll
+	MakeObjectVisible obj_player
 	SetFlag FLAG_GOT_BAG
 	SetFlag FLAG_GOT_TRAINER_CARD
 	SetFlag FLAG_GOT_SAVE_BUTTON
