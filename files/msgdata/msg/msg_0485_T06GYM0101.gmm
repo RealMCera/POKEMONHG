@@ -84,4 +84,20 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Mewtwo: You still do not understand.\rThen I will show you what created life can become.</language>
 	</row>
+	<row id="msg_0485_T06GYM0101_00021" index="21">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">New Island Challenge: Round One.\rThe Venusaur clone has grown stronger since your last battle.</language>
+	</row>
+	<row id="msg_0485_T06GYM0101_00022" index="22">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">New Island Challenge: Round Two.\rThe Blastoise clone steps forward without hesitation.</language>
+	</row>
+	<row id="msg_0485_T06GYM0101_00023" index="23">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">New Island Challenge: Final Round.\rThe Charizard clone spreads its wings and roars.</language>
+	</row>
+	<row id="msg_0485_T06GYM0101_00024" index="24">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Challenge complete.\rThe three clones acknowledge your strength before the return boat arrives.</language>
+	</row>
 </body>
