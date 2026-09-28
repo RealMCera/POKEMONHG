@@ -3,7 +3,7 @@
   "objects": [
     {
       "id": "obj_T20R0102_gswoman1",
-      "spriteId": "SPRITE_GSWOMAN1",
+      "spriteId": "SPRITE_SAKAKI",
       "movement": 0,
       "type": 0,
       "eventFlag": "FLAG_NOTHING",
@@ -14,7 +14,7 @@
       "param2": 0,
       "xRange": 0,
       "yRange": 0,
-      "x": 7,
+      "x": 5,
       "z": 5,
       "y": 0
     },
