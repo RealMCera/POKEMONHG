@@ -15,6 +15,7 @@
 #define _EV_scr_seq_D32R0501_011            11
 #define _EV_scr_seq_D32R0501_012            12
 #define _EV_scr_seq_D32R0501_013            13
+#define _EV_scr_seq_D32R0501_014            14
 
 #define obj_D32R0501_bfsm                    0
 #define obj_D32R0501_bfsw1                   1
