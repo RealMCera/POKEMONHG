@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_D32R0501.h"
 #include "msgdata/msg/msg_0109_D32R0501.h"
 	.include "asm/macros/script.inc"
@@ -19,6 +20,7 @@
 	ScrDef scr_seq_D32R0501_011
 	ScrDef scr_seq_D32R0501_012
 	ScrDef scr_seq_D32R0501_013
+	ScrDef scr_seq_D32R0501_014
 	ScrDefEnd
 
 scr_seq_D32R0501_013:
@@ -608,4 +610,42 @@ scr_seq_D32R0501_011:
 scr_seq_D32R0501_012:
 	SimpleNPCMsg msg_0109_D32R0501_00052
 	End
+	.balign 4, 0
+
+
+scr_seq_D32R0501_014:
+	LockAll
+	NPCMsg msg_0109_D32R0501_00053
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_VENUSAUR, 0
+	WaitCry
+	PlayCry SPECIES_BLASTOISE, 0
+	WaitCry
+	PlayCry SPECIES_CHARIZARD, 0
+	WaitCry
+	ScreenShake 2, 2, 8, 3
+	NPCMsg msg_0109_D32R0501_00054
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0109_D32R0501_00055
+	WaitButton
+	CloseMsg
+	ScreenShake 3, 3, 10, 4
+	PlayCry SPECIES_MEWTWO, 0
+	WaitCry
+	NPCMsg msg_0109_D32R0501_00056
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_MEW, 0
+	WaitCry
+	NPCMsg msg_0109_D32R0501_00057
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0109_D32R0501_00058
+	WaitButton
+	CloseMsg
+	ReleaseAll
+	End
+
 	.balign 4, 0
