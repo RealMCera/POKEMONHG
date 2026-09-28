@@ -11,5 +11,9 @@
 #define obj_T10R0601_kurumi                  2
 #define obj_T10R0601_babyboy1_11             3
 #define obj_T10R0601_leag_door2              4
+#define obj_T10R0601_first_movie_mewtwo       5
+#define obj_T10R0601_first_movie_trainer_red  6
+#define obj_T10R0601_first_movie_trainer_misty 7
+#define obj_T10R0601_first_movie_trainer_brock 8
 
 #endif //SCR_SEQ_T10R0601_H_
