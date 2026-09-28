@@ -30,6 +30,8 @@ scr_seq_T20R0102_001:
 
 scr_seq_T20R0102_002:
 	LockAll
+	ApplyMovement obj_player, _FM_HIDE_PLAYER_FACILITY
+	WaitMovement
 	ApplyMovement obj_T20R0102_gswoman1, _FM_GIOVANNI_STAGE
 	ApplyMovement obj_T20R0102_first_movie_mewtwo, _FM_MEWTWO_STAGE
 	WaitMovement
@@ -94,6 +96,13 @@ _FM_GIOVANNI_STAGE:
 _FM_MEWTWO_STAGE:
 	FaceNorth
 	JumpOnSpotFastNorth
+	EndMovement
+
+	.balign 4, 0
+
+
+_FM_HIDE_PLAYER_FACILITY:
+	SetInvisible
 	EndMovement
 
 	.balign 4, 0
