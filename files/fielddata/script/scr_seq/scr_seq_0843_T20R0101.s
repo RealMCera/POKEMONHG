@@ -1367,6 +1367,8 @@ _1107:
 
 scr_seq_T20R0101_015:
 	LockAll
+	ApplyMovement obj_player, _FM_HIDE_PLAYER_PROLOGUE
+	WaitMovement
 	NPCMsg msg_0543_T20R0101_00056
 	WaitButton
 	CloseMsg
@@ -1393,5 +1395,12 @@ scr_seq_T20R0101_015:
 	WaitFade
 	ReleaseAll
 	End
+
+	.balign 4, 0
+
+
+_FM_HIDE_PLAYER_PROLOGUE:
+	SetInvisible
+	EndMovement
 
 	.balign 4, 0
