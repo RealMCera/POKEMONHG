@@ -708,6 +708,11 @@ scr_seq_D40R0107_007:
 	WaitButton
 	CloseMsg
 	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_MEWTWO_REVEAL
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_GRAND_HALL, 0, 6, 24, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
 	ReleaseAll
 	End
 
