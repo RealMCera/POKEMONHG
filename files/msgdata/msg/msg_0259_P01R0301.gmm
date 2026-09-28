@@ -44,4 +44,24 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Most passengers are Trainers.\rThey’re all itching to battle in\ntheir cabins.</language>
 	</row>
+	<row id="msg_0259_P01R0301_00011" index="11">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Rain hammers the deck.\rThe lights flicker as the boat climbs another wave.</language>
+	</row>
+	<row id="msg_0259_P01R0301_00012" index="12">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Misty: Ash, this is officially the worst plan you have had today.</language>
+	</row>
+	<row id="msg_0259_P01R0301_00013" index="13">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ash: Hold on!\rWe are almost through it!</language>
+	</row>
+	<row id="msg_0259_P01R0301_00014" index="14">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Brock: There!\rI can see something beyond the rain!</language>
+	</row>
+	<row id="msg_0259_P01R0301_00015" index="15">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Lightning tears across the sky.\rA dark island rises out of the sea ahead.</language>
+	</row>
 </body>
