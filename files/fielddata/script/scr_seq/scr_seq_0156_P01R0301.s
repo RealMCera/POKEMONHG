@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_P01R0301.h"
 #include "msgdata/msg/msg_0259_P01R0301.h"
 	.include "asm/macros/script.inc"
@@ -14,6 +15,7 @@
 	ScrDef scr_seq_P01R0301_006
 	ScrDef scr_seq_P01R0301_007
 	ScrDef scr_seq_P01R0301_008
+	ScrDef scr_seq_P01R0301_009
 	ScrDefEnd
 
 scr_seq_P01R0301_007:
@@ -258,4 +260,38 @@ scr_seq_P01R0301_002:
 
 scr_seq_P01R0301_003:
 	End
+	.balign 4, 0
+
+
+scr_seq_P01R0301_009:
+	LockAll
+	NPCMsg msg_0259_P01R0301_00011
+	WaitButton
+	CloseMsg
+	ScreenShake 3, 3, 12, 4
+	NPCMsg msg_0259_P01R0301_00012
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_PIKACHU, 0
+	WaitCry
+	ScreenShake 2, 2, 10, 3
+	NPCMsg msg_0259_P01R0301_00013
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0259_P01R0301_00014
+	WaitButton
+	CloseMsg
+	ScreenShake 4, 4, 16, 5
+	NPCMsg msg_0259_P01R0301_00015
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_NEW_ISLAND
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_NEW_ISLAND_ARRIVAL, 0, 16, 35, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
+	ReleaseAll
+	End
+
 	.balign 4, 0
