@@ -48,4 +48,32 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Mary: Oh, wait!\nWe haven’t done the interview!</language>
 	</row>
+	<row id="msg_0527_T10R0601_00012" index="12">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Several Trainers are already waiting inside the hall.\rTheir Pokémon watch the shadows above the room.</language>
+	</row>
+	<row id="msg_0527_T10R0601_00013" index="13">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Trainer: So you got the invitation too?\rWhoever owns this place has gone to a lot of trouble.</language>
+	</row>
+	<row id="msg_0527_T10R0601_00014" index="14">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Misty: I do not like this.\rThere is still no sign of our host.</language>
+	</row>
+	<row id="msg_0527_T10R0601_00015" index="15">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">A voice fills the hall.\rMewtwo: You came because you believed strength made you worthy.</language>
+	</row>
+	<row id="msg_0527_T10R0601_00016" index="16">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mewtwo: Humans command Pokémon and call that bond.\rTonight I will test how much that bond is worth.</language>
+	</row>
+	<row id="msg_0527_T10R0601_00017" index="17">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ash: Pokémon are not tools.\rIf you want to prove something, then prove it to us.</language>
+	</row>
+	<row id="msg_0527_T10R0601_00018" index="18">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mewtwo: Very well.\rBring forward your strongest Pokémon.</language>
+	</row>
 </body>
