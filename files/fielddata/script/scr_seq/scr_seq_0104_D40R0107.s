@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_D40R0107.h"
 #include "msgdata/msg/msg_0125_D40R0107.h"
 	.include "asm/macros/script.inc"
@@ -12,6 +13,7 @@
 	ScrDef scr_seq_D40R0107_004
 	ScrDef scr_seq_D40R0107_005
 	ScrDef scr_seq_D40R0107_006
+	ScrDef scr_seq_D40R0107_007
 	ScrDefEnd
 
 scr_seq_D40R0107_006:
@@ -686,4 +688,27 @@ _0BCD:
 	CloseMsg
 	ReleaseAll
 	End
+	.balign 4, 0
+
+
+scr_seq_D40R0107_007:
+	LockAll
+	NPCMsg msg_0125_D40R0107_00009
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0125_D40R0107_00010
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0125_D40R0107_00011
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_PIKACHU, 0
+	WaitCry
+	NPCMsg msg_0125_D40R0107_00012
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_MEWTWO_REVEAL
+	ReleaseAll
+	End
+
 	.balign 4, 0
