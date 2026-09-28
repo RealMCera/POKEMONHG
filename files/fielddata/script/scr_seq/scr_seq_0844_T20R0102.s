@@ -30,6 +30,9 @@ scr_seq_T20R0102_001:
 
 scr_seq_T20R0102_002:
 	LockAll
+	ApplyMovement obj_T20R0102_gswoman1, _FM_GIOVANNI_STAGE
+	ApplyMovement obj_T20R0102_first_movie_mewtwo, _FM_MEWTWO_STAGE
+	WaitMovement
 	NPCMsg msg_0544_T20R0102_00000
 	WaitButton
 	CloseMsg
@@ -79,5 +82,18 @@ _FM_GIOVANNI_RECOVER:
 	CloseMsg
 	ReleaseAll
 	End
+
+	.balign 4, 0
+
+
+_FM_GIOVANNI_STAGE:
+	FaceSouth
+	Delay8
+	EndMovement
+
+_FM_MEWTWO_STAGE:
+	FaceNorth
+	JumpOnSpotFastNorth
+	EndMovement
 
 	.balign 4, 0
