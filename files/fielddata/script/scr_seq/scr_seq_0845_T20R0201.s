@@ -372,6 +372,8 @@ scr_seq_T20R0201_005:
 	NPCMsg msg_0545_T20R0201_00038
 	WaitButton
 	CloseMsg
+	ApplyMovement obj_T20R0201_first_movie_brock, _FM_BROCK_REACT
+	WaitMovement
 	ReleaseAll
 	End
 	.balign 4, 0
@@ -397,6 +399,8 @@ _FM_ASH_PARTY_READY:
 	NPCMsg msg_0545_T20R0201_00034
 	WaitButton
 	CloseMsg
+	ApplyMovement obj_T20R0201_first_movie_misty, _FM_MISTY_REACT
+	WaitMovement
 	NPCMsg msg_0545_T20R0201_00035
 	WaitButton
 	CloseMsg
@@ -417,5 +421,19 @@ _FM_ASH_PARTY_READY:
 	WaitFade
 	ReleaseAll
 	End
+
+	.balign 4, 0
+
+
+_FM_MISTY_REACT:
+	EmoteExclamationMark
+	FaceWest
+	EndMovement
+
+_FM_BROCK_REACT:
+	FaceNorth
+	Delay8
+	FaceWest
+	EndMovement
 
 	.balign 4, 0
