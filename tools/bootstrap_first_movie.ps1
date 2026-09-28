@@ -1,6 +1,8 @@
 param(
     [string]$WorkRoot = "$HOME\Downloads\PokemonFirstMovieHGSS",
-    [string]$HeartGoldRom = "$HOME\Downloads\Pokemon - HeartGold Version (USA)(1).nds"
+    [string]$HeartGoldRom = "$HOME\Downloads\Pokemon - HeartGold Version (USA)(1).nds",
+    [string]$TitleTop = "$HOME\Downloads\pokemon_first_movie_ds_top_256x192(1).png",
+    [string]$TitleBottom = "$HOME\Downloads\pokemon_first_movie_ds_bottom_256x192(1).png"
 )
 
 $ErrorActionPreference = "Stop"
@@ -32,8 +34,23 @@ git checkout first-movie
 New-Item -ItemType Directory -Force -Path ".first_movie" | Out-Null
 Copy-Item $HeartGoldRom ".first_movie\pokeheartgold.us.nds"
 
+New-Item -ItemType Directory -Force -Path ".first_movie\title" | Out-Null
+if (Test-Path $TitleTop) {
+    Copy-Item $TitleTop ".first_movie\title\top.png"
+    Write-Host "Staged exact top title PNG."
+} else {
+    Write-Warning "Top title PNG not found at: $TitleTop"
+}
+if (Test-Path $TitleBottom) {
+    Copy-Item $TitleBottom ".first_movie\title\bottom.png"
+    Write-Host "Staged exact bottom title PNG."
+} else {
+    Write-Warning "Bottom title PNG not found at: $TitleBottom"
+}
+
 Write-Host ""
 Write-Host "Ready at: $WorkRoot"
 Write-Host "Branch: first-movie"
 Write-Host "Verified local ROM copied to .first_movie\pokeheartgold.us.nds"
-Write-Host "Do not commit the retail ROM."
+Write-Host "Title source folder: .first_movie\title"
+Write-Host "Do not commit the retail ROM or private title-source staging folder."
