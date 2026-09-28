@@ -520,7 +520,11 @@ u32 PlayerAvatar_GetSpriteByStateAndGender(s32 state, u32 gender) {
     if (gender == PLAYER_GENDER_MALE) {
         switch (state) {
         case PLAYER_STATE_WALKING:
-            return SPRITE_HERO;
+            /*
+             * First Movie build: use Red's Kanto-era field model as the
+             * temporary Ash stand-in until dedicated Ash graphics land.
+             */
+            return SPRITE_RED;
         case PLAYER_STATE_CYCLING:
             return SPRITE_CYCLEHERO;
         case PLAYER_STATE_SURFING:
