@@ -96,4 +96,16 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">The road continues.\rSomewhere far away, another journey is already beginning.</language>
 	</row>
+	<row id="msg_0256_P01R0102_00024" index="24">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Harbor Master: A strange route has opened across the water.\rReturn to New Island for another challenge? {YESNO 0}</language>
+	</row>
+	<row id="msg_0256_P01R0102_00025" index="25">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Harbor Master: Then hold on tight.\rThe sea is calm today, but that island never feels ordinary.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00026" index="26">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Harbor Master: No problem.\rThe boat will be here whenever you are ready.</language>
+	</row>
 </body>
