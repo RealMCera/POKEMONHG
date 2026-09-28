@@ -316,6 +316,7 @@ _03BC:
 
 scr_seq_T10R0601_003:
 	LockAll
+	HidePerson obj_T10R0601_first_movie_mewtwo
 	NPCMsg msg_0527_T10R0601_00012
 	WaitButton
 	CloseMsg
@@ -326,6 +327,9 @@ scr_seq_T10R0601_003:
 	WaitButton
 	CloseMsg
 	ScreenShake 2, 2, 8, 3
+	ShowPerson obj_T10R0601_first_movie_mewtwo
+	ApplyMovement obj_T10R0601_first_movie_mewtwo, _FM_MEWTWO_REVEAL_MOVE
+	WaitMovement
 	PlayCry SPECIES_MEWTWO, 0
 	WaitCry
 	NPCMsg msg_0527_T10R0601_00015
@@ -348,5 +352,14 @@ scr_seq_T10R0601_003:
 	WaitFade
 	ReleaseAll
 	End
+
+	.balign 4, 0
+
+
+_FM_MEWTWO_REVEAL_MOVE:
+	FaceSouth
+	Delay8
+	JumpOnSpotFastSouth
+	EndMovement
 
 	.balign 4, 0
