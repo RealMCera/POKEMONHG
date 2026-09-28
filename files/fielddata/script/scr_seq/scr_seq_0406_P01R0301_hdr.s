@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_P01R0301.h"
 #include "constants/init_script_types.h"
 	.include "asm/macros/script.inc"
@@ -13,6 +14,7 @@
 	InitScriptEntryEnd
 
 scr_seq_P01R0301_map_scripts_2:
+	InitScriptGoToIfEqual VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_STORM, _EV_scr_seq_P01R0301_009 + 1
 	InitScriptGoToIfEqual VAR_UNK_40DC, 0, _EV_scr_seq_P01R0301_005 + 1
 	InitScriptFrameTableEnd
 
