@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_P01R0102.h"
 #include "msgdata/msg/msg_0256_P01R0102.h"
 	.include "asm/macros/script.inc"
@@ -12,6 +13,7 @@
 	ScrDef scr_seq_P01R0102_004
 	ScrDef scr_seq_P01R0102_005
 	ScrDef scr_seq_P01R0102_006
+	ScrDef scr_seq_P01R0102_007
 	ScrDefEnd
 
 scr_seq_P01R0102_001:
@@ -301,4 +303,35 @@ _038E:
 	CloseMsg
 	ReleaseAll
 	End
+	.balign 4, 0
+
+
+scr_seq_P01R0102_007:
+	LockAll
+	NPCMsg msg_0256_P01R0102_00014
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0256_P01R0102_00015
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0256_P01R0102_00016
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_PIKACHU, 0
+	WaitCry
+	NPCMsg msg_0256_P01R0102_00017
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0256_P01R0102_00018
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_STORM
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_STORM_CROSSING, 0, 24, 18, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
+	ReleaseAll
+	End
+
 	.balign 4, 0
