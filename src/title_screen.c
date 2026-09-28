@@ -32,11 +32,12 @@
 #include "unk_02020B8C.h"
 #include "unk_02026E30.h"
 
-#ifdef HEARTGOLD
-#define TITLE_SCREEN_SPECIES SPECIES_HO_OH
-#else // SOULSILVER
-#define TITLE_SCREEN_SPECIES SPECIES_LUGIA
-#endif
+/*
+ * First Movie build: keep the proven HGSS title-screen renderer for now,
+ * but make its interactive audio identity match the project.
+ * Dedicated 2D/3D title assets can replace the stock resources later.
+ */
+#define TITLE_SCREEN_SPECIES SPECIES_MEWTWO
 
 #define CLEAR_SAVE_KEY_COMBO  (PAD_BUTTON_B | PAD_BUTTON_SELECT | PAD_KEY_UP)
 #define MIC_TEST_KEY_COMBO    (PAD_BUTTON_X | PAD_BUTTON_Y | PAD_KEY_DOWN)
