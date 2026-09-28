@@ -34569,6 +34569,96 @@
           "message": "Control group defeated.\\nPower output is still climbing.\\n"
         }
       ]
+    },
+    {
+      "type": "TRTYPE_MON_MOVES",
+      "class": "TRAINERCLASS_SCIENTIST_GS",
+      "name": "{TRNAME}Clone Venusaur",
+      "items": [],
+      "ai_flags": 33,
+      "double": 0,
+      "party": [
+        {
+          "difficulty": 120,
+          "genderOverride": "TRPOKE_GENDER_OVERRIDE_OFF",
+          "abilityOverride": "TRPOKE_ABILITY_OVERRIDE_OFF",
+          "level": 36,
+          "species": "SPECIES_VENUSAUR",
+          "capsule": 0,
+          "moves": [
+            "MOVE_RAZOR_LEAF",
+            "MOVE_SLEEP_POWDER",
+            "MOVE_SLUDGE_BOMB",
+            "MOVE_TAKE_DOWN"
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": "TRMSG_LOSE",
+          "message": "The Venusaur clone falls back.\\nIts eyes never leave you.\\n"
+        }
+      ]
+    },
+    {
+      "type": "TRTYPE_MON_MOVES",
+      "class": "TRAINERCLASS_SCIENTIST_GS",
+      "name": "{TRNAME}Clone Blastoise",
+      "items": [],
+      "ai_flags": 33,
+      "double": 0,
+      "party": [
+        {
+          "difficulty": 120,
+          "genderOverride": "TRPOKE_GENDER_OVERRIDE_OFF",
+          "abilityOverride": "TRPOKE_ABILITY_OVERRIDE_OFF",
+          "level": 36,
+          "species": "SPECIES_BLASTOISE",
+          "capsule": 0,
+          "moves": [
+            "MOVE_WATER_PULSE",
+            "MOVE_BITE",
+            "MOVE_PROTECT",
+            "MOVE_AQUA_TAIL"
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": "TRMSG_LOSE",
+          "message": "The Blastoise clone drops to one knee.\\nThe chamber goes silent.\\n"
+        }
+      ]
+    },
+    {
+      "type": "TRTYPE_MON_MOVES",
+      "class": "TRAINERCLASS_SCIENTIST_GS",
+      "name": "{TRNAME}Clone Charizard",
+      "items": [],
+      "ai_flags": 35,
+      "double": 0,
+      "party": [
+        {
+          "difficulty": 160,
+          "genderOverride": "TRPOKE_GENDER_OVERRIDE_OFF",
+          "abilityOverride": "TRPOKE_ABILITY_OVERRIDE_OFF",
+          "level": 38,
+          "species": "SPECIES_CHARIZARD",
+          "capsule": 0,
+          "moves": [
+            "MOVE_FLAMETHROWER",
+            "MOVE_WING_ATTACK",
+            "MOVE_SLASH",
+            "MOVE_SMOKESCREEN"
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": "TRMSG_LOSE",
+          "message": "The Charizard clone roars and yields.\\nMewtwo watches without expression.\\n"
+        }
+      ]
     }
   ]
 }
