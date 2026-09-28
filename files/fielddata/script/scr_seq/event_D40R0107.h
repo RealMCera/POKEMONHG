@@ -8,6 +8,7 @@
 #define _EV_scr_seq_D40R0107_004             4
 #define _EV_scr_seq_D40R0107_005             5
 #define _EV_scr_seq_D40R0107_006             6
+#define _EV_scr_seq_D40R0107_007             7
 
 #define obj_D40R0107_dancer                  0
 #define obj_D40R0107_dancer_2                1
