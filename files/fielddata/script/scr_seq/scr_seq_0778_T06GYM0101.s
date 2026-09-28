@@ -33,6 +33,7 @@
 	ScrDef scr_seq_T06GYM0101_024
 	ScrDef scr_seq_T06GYM0101_025
 	ScrDef scr_seq_T06GYM0101_026
+	ScrDef scr_seq_T06GYM0101_027
 	ScrDefEnd
 
 scr_seq_T06GYM0101_021:
@@ -430,6 +431,52 @@ scr_seq_T06GYM0101_026:
 	End
 
 _FM_CLONE_WHITEOUT:
+	WhiteOut
+	ReleaseAll
+	End
+
+	.balign 4, 0
+
+
+scr_seq_T06GYM0101_027:
+	LockAll
+	NPCMsg msg_0485_T06GYM0101_00021
+	WaitButton
+	CloseMsg
+	HealParty
+	TrainerBattle TRAINER_FIRST_MOVIE_REMATCH_VENUSAUR, 0, 0, 0
+	CheckBattleWon VAR_SPECIAL_RESULT
+	Compare VAR_SPECIAL_RESULT, 0
+	GoToIfEq _FM_POSTGAME_WHITEOUT
+	HealParty
+	NPCMsg msg_0485_T06GYM0101_00022
+	WaitButton
+	CloseMsg
+	TrainerBattle TRAINER_FIRST_MOVIE_REMATCH_BLASTOISE, 0, 0, 0
+	CheckBattleWon VAR_SPECIAL_RESULT
+	Compare VAR_SPECIAL_RESULT, 0
+	GoToIfEq _FM_POSTGAME_WHITEOUT
+	HealParty
+	NPCMsg msg_0485_T06GYM0101_00023
+	WaitButton
+	CloseMsg
+	TrainerBattle TRAINER_FIRST_MOVIE_REMATCH_CHARIZARD, 0, 0, 0
+	CheckBattleWon VAR_SPECIAL_RESULT
+	Compare VAR_SPECIAL_RESULT, 0
+	GoToIfEq _FM_POSTGAME_WHITEOUT
+	HealParty
+	NPCMsg msg_0485_T06GYM0101_00024
+	WaitButton
+	CloseMsg
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_AFTERMATH_HARBOR, 0, 24, 20, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
+	ReleaseAll
+	End
+
+_FM_POSTGAME_WHITEOUT:
 	WhiteOut
 	ReleaseAll
 	End
