@@ -16,4 +16,12 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Giovanni: Enough.\rYou have strength. Now we find out whether you can be controlled.</language>
 	</row>
+	<row id="msg_0544_T20R0102_00004" index="4">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Giovanni: With the right restraints, your power could belong to me.\rYou will fight when I command it.</language>
+	</row>
+	<row id="msg_0544_T20R0102_00005" index="5">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">No.\rI will decide what I am.\fThe lights burst. The room disappears\nin a wave of psychic force.</language>
+	</row>
 </body>
