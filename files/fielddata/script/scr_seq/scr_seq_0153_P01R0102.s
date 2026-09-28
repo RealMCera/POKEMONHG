@@ -120,6 +120,8 @@ scr_seq_P01R0102_000:
 	PlaySE SEQ_SE_DP_SELECT
 	LockAll
 	FacePlayer
+	Compare VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_POSTGAME
+	GoToIfEq _FM_POSTGAME_FERRY
 	GoToIfSet FLAG_BOAT_ARRIVED, _0211
 	NPCMsg msg_0256_P01R0102_00000
 	CloseMsg
@@ -358,6 +360,34 @@ scr_seq_P01R0102_008:
 	WaitButton
 	CloseMsg
 	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_POSTGAME
+	ReleaseAll
+	End
+
+	.balign 4, 0
+
+
+_FM_POSTGAME_FERRY:
+	NPCMsg msg_0256_P01R0102_00024
+	TouchscreenMenuHide
+	GetMenuChoice VAR_SPECIAL_RESULT
+	TouchscreenMenuShow
+	Compare VAR_SPECIAL_RESULT, 0
+	GoToIfNe _FM_POSTGAME_FERRY_DECLINE
+	NPCMsg msg_0256_P01R0102_00025
+	WaitButton
+	CloseMsg
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_CLONE_ARENA, 0, 5, 14, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
+	ReleaseAll
+	End
+
+_FM_POSTGAME_FERRY_DECLINE:
+	NPCMsg msg_0256_P01R0102_00026
+	WaitButton
+	CloseMsg
 	ReleaseAll
 	End
 
