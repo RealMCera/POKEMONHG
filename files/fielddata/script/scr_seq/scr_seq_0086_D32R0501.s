@@ -645,6 +645,46 @@ scr_seq_D32R0501_014:
 	NPCMsg msg_0109_D32R0501_00058
 	WaitButton
 	CloseMsg
+	ScreenShake 3, 3, 12, 4
+	PlayCry SPECIES_MEWTWO, 0
+	WaitCry
+	PlayCry SPECIES_MEW, 0
+	WaitCry
+	NPCMsg msg_0109_D32R0501_00059
+	WaitButton
+	CloseMsg
+	ScreenShake 4, 4, 18, 5
+	NPCMsg msg_0109_D32R0501_00060
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_PIKACHU, 0
+	WaitCry
+	NPCMsg msg_0109_D32R0501_00061
+	WaitButton
+	CloseMsg
+	FadeScreen 4, 6, 0, RGB_WHITE
+	WaitFade
+	NPCMsg msg_0109_D32R0501_00062
+	WaitButton
+	CloseMsg
+	FadeScreen 4, 6, 1, RGB_WHITE
+	WaitFade
+	NPCMsg msg_0109_D32R0501_00063
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_MEW, 0
+	WaitCry
+	PlayCry SPECIES_MEWTWO, 0
+	WaitCry
+	NPCMsg msg_0109_D32R0501_00064
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_EPILOGUE
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_AFTERMATH_HARBOR, 0, 24, 20, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
 	ReleaseAll
 	End
 
