@@ -9,6 +9,7 @@
 #define _EV_scr_seq_P01R0102_005             5
 #define _EV_scr_seq_P01R0102_006             6
 #define _EV_scr_seq_P01R0102_007             7
+#define _EV_scr_seq_P01R0102_008             8
 
 #define obj_P01R0102_seaman_2                0
 #define obj_P01R0102_seaman_2_2              1
