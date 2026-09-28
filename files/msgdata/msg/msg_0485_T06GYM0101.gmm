@@ -60,4 +60,28 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Vermilion City Pokémon Gym\rGym Leader: Lt. Surge\nCertified Trainer!\f{STRVAR_1 3, 0, 0}</language>
 	</row>
+	<row id="msg_0485_T06GYM0101_00015" index="15">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Three shapes step from the far side of the arena.\rVenusaur. Blastoise. Charizard.\rThey look familiar, but something about them is wrong.</language>
+	</row>
+	<row id="msg_0485_T06GYM0101_00016" index="16">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mewtwo: First, the copy of Venusaur.\rShow me whether the original deserves its name.</language>
+	</row>
+	<row id="msg_0485_T06GYM0101_00017" index="17">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mewtwo: Next comes Blastoise.\rStrength should not depend on where life began.</language>
+	</row>
+	<row id="msg_0485_T06GYM0101_00018" index="18">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mewtwo: And now Charizard.\rLet the strongest one remain standing.</language>
+	</row>
+	<row id="msg_0485_T06GYM0101_00019" index="19">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ash: They are not just copies.\rThey are Pokémon, and they are choosing to fight for themselves.</language>
+	</row>
+	<row id="msg_0485_T06GYM0101_00020" index="20">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mewtwo: You still do not understand.\rThen I will show you what created life can become.</language>
+	</row>
 </body>
