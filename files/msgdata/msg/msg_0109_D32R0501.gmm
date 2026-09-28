@@ -236,4 +236,28 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Mew floats into view.\rMewtwo rises to meet it, and the entire arena begins to shake.</language>
 	</row>
+	<row id="msg_0109_D32R0501_00059" index="59">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mew and Mewtwo tear across the arena in flashes of light.\rEvery collision shakes the stone beneath your feet.</language>
+	</row>
+	<row id="msg_0109_D32R0501_00060" index="60">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Their attacks meet head-on.\rA blinding wave of energy races toward the battling Pokémon.</language>
+	</row>
+	<row id="msg_0109_D32R0501_00061" index="61">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ash: STOP!\rThere has to be another way!</language>
+	</row>
+	<row id="msg_0109_D32R0501_00062" index="62">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">For one impossible moment, everything is silent.</language>
+	</row>
+	<row id="msg_0109_D32R0501_00063" index="63">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Pikachu refuses to leave Ash's side.\rOne by one, the fighting Pokémon stop and look toward them.</language>
+	</row>
+	<row id="msg_0109_D32R0501_00064" index="64">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mewtwo: Perhaps the question was never who was born first.\rWhat matters is what each of us chooses to become.</language>
+	</row>
 </body>
