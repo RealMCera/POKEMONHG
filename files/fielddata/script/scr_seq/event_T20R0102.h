@@ -3,6 +3,7 @@
 
 #define _EV_scr_seq_T20R0102_000             0
 #define _EV_scr_seq_T20R0102_001             1
+#define _EV_scr_seq_T20R0102_002             2
 
 #define obj_T20R0102_gswoman1                0
 #define obj_T20R0102_gsboy2                  1
