@@ -13,6 +13,7 @@
 	InitScriptEntryEnd
 
 scr_seq_P01R0102_map_scripts_2:
+	InitScriptGoToIfEqual VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_EPILOGUE, _EV_scr_seq_P01R0102_008 + 1
 	InitScriptGoToIfEqual VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_HARBOR, _EV_scr_seq_P01R0102_007 + 1
 	InitScriptGoToIfEqual VAR_BOAT_DIRECTION, 2, _EV_scr_seq_P01R0102_002 + 1
 	InitScriptFrameTableEnd
