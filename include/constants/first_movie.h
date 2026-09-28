@@ -43,10 +43,10 @@
 #define MAP_FIRST_MOVIE_AFTERMATH_HARBOR MAP_SS_AQUA_OLIVINE_PORT_EXTERIOR
 
 /*
- * Campaign state uses an otherwise-unassigned variable through an alias.
- * Keeping the alias here means scripts can use a descriptive name immediately
- * without changing SaveData layout.
+ * Campaign state uses VAR_UNK_40FD, which is not referenced by stock field
+ * scripts in this codebase. 0x40FC is deliberately avoided because the
+ * original Elm's Lab scripts use VAR_UNK_40FC.
  */
-#define VAR_FIRST_MOVIE_CHAPTER 0x40FC
+#define VAR_FIRST_MOVIE_CHAPTER 0x40FD
 
 #endif // POKEHEARTGOLD_CONSTANTS_FIRST_MOVIE_H
