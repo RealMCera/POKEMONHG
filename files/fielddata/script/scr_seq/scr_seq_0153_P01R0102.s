@@ -14,6 +14,7 @@
 	ScrDef scr_seq_P01R0102_005
 	ScrDef scr_seq_P01R0102_006
 	ScrDef scr_seq_P01R0102_007
+	ScrDef scr_seq_P01R0102_008
 	ScrDefEnd
 
 scr_seq_P01R0102_001:
@@ -331,6 +332,32 @@ scr_seq_P01R0102_007:
 	Warp MAP_FIRST_MOVIE_STORM_CROSSING, 0, 24, 18, DIR_NORTH
 	FadeScreen 6, 1, 1, RGB_BLACK
 	WaitFade
+	ReleaseAll
+	End
+
+	.balign 4, 0
+
+
+scr_seq_P01R0102_008:
+	LockAll
+	NPCMsg msg_0256_P01R0102_00019
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0256_P01R0102_00020
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_PIKACHU, 0
+	WaitCry
+	NPCMsg msg_0256_P01R0102_00021
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0256_P01R0102_00022
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0256_P01R0102_00023
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_POSTGAME
 	ReleaseAll
 	End
 
