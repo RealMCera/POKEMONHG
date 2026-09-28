@@ -13,6 +13,7 @@
 	InitScriptEntryEnd
 
 scr_seq_T06GYM0101_first_movie_scripts:
+	InitScriptGoToIfEqual VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_POSTGAME, _EV_scr_seq_T06GYM0101_027 + 1
 	InitScriptGoToIfEqual VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_CLONE_TRIALS, _EV_scr_seq_T06GYM0101_026 + 1
 	InitScriptFrameTableEnd
 
