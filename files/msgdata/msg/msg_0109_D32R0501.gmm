@@ -212,4 +212,28 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">My dream is to wear a beautiful dress\nand live in a castle!\rThat’s not what I meant to say...\rMy dream is to live in a castle with\nsomeone who wears a beautiful dress!</language>
 	</row>
+	<row id="msg_0109_D32R0501_00053" index="53">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">The arena erupts into chaos.\rOriginals and clones charge at one another across the floor.</language>
+	</row>
+	<row id="msg_0109_D32R0501_00054" index="54">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Misty: They are hurting each other for no reason!\rAsh, we have to stop this!</language>
+	</row>
+	<row id="msg_0109_D32R0501_00055" index="55">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ash: Mewtwo!\rBeing created does not make them less real than the originals!</language>
+	</row>
+	<row id="msg_0109_D32R0501_00056" index="56">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mewtwo: Then let strength decide it.\rI will defeat every claim that I am only a copy.</language>
+	</row>
+	<row id="msg_0109_D32R0501_00057" index="57">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">A small cry cuts through the noise.\rEvery Pokémon in the arena turns toward the sound.</language>
+	</row>
+	<row id="msg_0109_D32R0501_00058" index="58">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Mew floats into view.\rMewtwo rises to meet it, and the entire arena begins to shake.</language>
+	</row>
 </body>
