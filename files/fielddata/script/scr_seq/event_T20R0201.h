@@ -8,6 +8,7 @@
 #define _EV_scr_seq_T20R0201_004             4
 #define _EV_scr_seq_T20R0201_005             5
 #define _EV_scr_seq_T20R0201_006             6
+#define _EV_scr_seq_T20R0201_007             7
 
 #define obj_T20R0201_gsmama                  0
 
