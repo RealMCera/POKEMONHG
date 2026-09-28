@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_D35R0103.h"
 #include "msgdata/msg/msg_0113_D35R0103.h"
 	.include "asm/macros/script.inc"
@@ -20,6 +21,7 @@
 	ScrDef scr_seq_D35R0103_012
 	ScrDef scr_seq_D35R0103_013
 	ScrDef scr_seq_D35R0103_014
+	ScrDef scr_seq_D35R0103_015
 	ScrDefEnd
 
 scr_seq_D35R0103_002:
@@ -840,4 +842,46 @@ _0AE4:
 	CloseMsg
 	ReleaseAll
 	End
+	.balign 4, 0
+
+
+scr_seq_D35R0103_015:
+	LockAll
+	NPCMsg msg_0113_D35R0103_00028
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0113_D35R0103_00029
+	WaitButton
+	CloseMsg
+	ScreenShake 2, 2, 8, 3
+	NPCMsg msg_0113_D35R0103_00030
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_PIKACHU, 0
+	WaitCry
+	NPCMsg msg_0113_D35R0103_00031
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0113_D35R0103_00032
+	WaitButton
+	CloseMsg
+	PlayCry SPECIES_CHARIZARD, 0
+	WaitCry
+	PlayCry SPECIES_BLASTOISE, 0
+	WaitCry
+	PlayCry SPECIES_VENUSAUR, 0
+	WaitCry
+	ScreenShake 3, 3, 12, 4
+	NPCMsg msg_0113_D35R0103_00033
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_FINAL_BATTLE
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_ORIGINALS_VS_CLONES, 0, 10, 8, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
+	ReleaseAll
+	End
+
 	.balign 4, 0
