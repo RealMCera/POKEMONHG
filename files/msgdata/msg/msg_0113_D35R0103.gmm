@@ -112,4 +112,28 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">MURKROW screamed the password,\nmimicking the voice of Petrel.\r..................\rThe voice-recognition system unlocked\nthe door!\r</language>
 	</row>
+	<row id="msg_0113_D35R0103_00028" index="28">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Rows of tanks hum in the dark.\rInside them, shadows move beneath the glass.</language>
+	</row>
+	<row id="msg_0113_D35R0103_00029" index="29">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Misty: These are the Pokémon from the arena.\rHe has been making more of them down here.</language>
+	</row>
+	<row id="msg_0113_D35R0103_00030" index="30">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">The machinery surges.\rPoké Balls locked into the system begin to shake.</language>
+	</row>
+	<row id="msg_0113_D35R0103_00031" index="31">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ash: Pikachu!\rWe are getting every Pokémon out of here.</language>
+	</row>
+	<row id="msg_0113_D35R0103_00032" index="32">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Brock: The release controls are responding.\rWhatever Mewtwo planned, the originals are free.</language>
+	</row>
+	<row id="msg_0113_D35R0103_00033" index="33">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">The doors burst open.\rOriginals and clones rush toward the arena above.</language>
+	</row>
 </body>
