@@ -36,4 +36,20 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">I think once you turn your back to it,\nLUGIA will not come back for\fsome time...\rIf you want to see LUGIA, perhaps you\ncan come back here after all\fhas been settled...</language>
 	</row>
+	<row id="msg_0125_D40R0107_00009" index="9">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">The storm falls strangely quiet.\rAhead, stone walls climb from the black water.</language>
+	</row>
+	<row id="msg_0125_D40R0107_00010" index="10">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Misty: That has to be New Island.\rTell me somebody else thinks this place is creepy.</language>
+	</row>
+	<row id="msg_0125_D40R0107_00011" index="11">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Brock: The invitation brought us here for a reason.\rStay close until we know what that reason is.</language>
+	</row>
+	<row id="msg_0125_D40R0107_00012" index="12">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">A massive doorway stands open ahead.\rWarm light spills across the stone as if someone has been expecting you.</language>
+	</row>
 </body>
