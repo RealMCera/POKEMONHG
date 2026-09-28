@@ -56,4 +56,24 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Your Photo Album is full.\rAccess your PC and delete\nsome pictures.</language>
 	</row>
+	<row id="msg_0256_P01R0102_00014" index="14">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Harbor Master: All boats are grounded!\rThat storm is getting worse by the minute.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00015" index="15">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Misty: That settles it.\rWe wait here until the weather clears.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00016" index="16">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ash: The invitation said New Island.\rIf the other Trainers are going, we are not turning back now.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00017" index="17">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Brock: Pikachu agrees with Ash.\rThat makes two votes for the terrible idea.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00018" index="18">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Thunder rolls over the harbor.\rYou head out before anyone can stop you.</language>
+	</row>
 </body>
