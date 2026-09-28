@@ -76,4 +76,24 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">Thunder rolls over the harbor.\rYou head out before anyone can stop you.</language>
 	</row>
+	<row id="msg_0256_P01R0102_00019" index="19">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">The storm is gone.\rMorning light stretches across the harbor as if the night never happened.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00020" index="20">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Misty: I know we went somewhere.\rI just cannot remember where.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00021" index="21">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Brock: Whatever happened, everyone made it back safely.\rMaybe that is enough for today.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00022" index="22">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Ash looks toward the clearing sky.\rFor a second, a tiny shape seems to drift between the clouds.</language>
+	</row>
+	<row id="msg_0256_P01R0102_00023" index="23">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">The road continues.\rSomewhere far away, another journey is already beginning.</language>
+	</row>
 </body>
