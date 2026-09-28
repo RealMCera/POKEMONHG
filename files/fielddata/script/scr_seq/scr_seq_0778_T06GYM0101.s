@@ -421,6 +421,11 @@ scr_seq_T06GYM0101_026:
 	WaitButton
 	CloseMsg
 	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_CLONE_LAB
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_CLONING_LAB, 0, 10, 27, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
 	ReleaseAll
 	End
 
