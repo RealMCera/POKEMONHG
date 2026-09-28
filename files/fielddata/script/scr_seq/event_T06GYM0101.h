@@ -27,6 +27,7 @@
 #define _EV_scr_seq_T06GYM0101_023          23
 #define _EV_scr_seq_T06GYM0101_024          24
 #define _EV_scr_seq_T06GYM0101_025          25
+#define _EV_scr_seq_T06GYM0101_026          26
 
 #define obj_T06GYM0101_stop                  0
 #define obj_T06GYM0101_stop_2                1
