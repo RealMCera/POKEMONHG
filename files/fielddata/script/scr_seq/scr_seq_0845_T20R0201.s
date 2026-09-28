@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_T20R0201.h"
 #include "msgdata/msg/msg_0545_T20R0201.h"
 	.include "asm/macros/script.inc"
@@ -12,6 +13,7 @@
 	ScrDef scr_seq_T20R0201_004
 	ScrDef scr_seq_T20R0201_005
 	ScrDef scr_seq_T20R0201_006
+	ScrDef scr_seq_T20R0201_007
 	ScrDefEnd
 
 scr_seq_T20R0201_000:
@@ -372,4 +374,43 @@ scr_seq_T20R0201_005:
 	CloseMsg
 	ReleaseAll
 	End
+	.balign 4, 0
+
+
+scr_seq_T20R0201_007:
+	LockAll
+	SetFlag FLAG_GOT_BAG
+	SetFlag FLAG_GOT_TRAINER_CARD
+	SetFlag FLAG_GOT_SAVE_BUTTON
+	SetFlag FLAG_GOT_OPTIONS_BUTTON
+	NPCMsg msg_0545_T20R0201_00033
+	WaitButton
+	CloseMsg
+	GetPartyCount VAR_TEMP_x4000
+	Compare VAR_TEMP_x4000, 0
+	GoToIfNe _FM_ASH_PARTY_READY
+	GiveMon SPECIES_PIKACHU, 30, 0, 0, 0, VAR_SPECIAL_RESULT
+	GiveMon SPECIES_BULBASAUR, 25, 0, 0, 0, VAR_SPECIAL_RESULT
+	GiveMon SPECIES_SQUIRTLE, 25, 0, 0, 0, VAR_SPECIAL_RESULT
+	GiveMon SPECIES_CHARIZARD, 36, 0, 0, 0, VAR_SPECIAL_RESULT
+_FM_ASH_PARTY_READY:
+	NPCMsg msg_0545_T20R0201_00034
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0545_T20R0201_00035
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0545_T20R0201_00036
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0545_T20R0201_00037
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0545_T20R0201_00038
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_HARBOR
+	ReleaseAll
+	End
+
 	.balign 4, 0
