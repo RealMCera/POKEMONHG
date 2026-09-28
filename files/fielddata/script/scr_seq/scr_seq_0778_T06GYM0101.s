@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_T06GYM0101.h"
 #include "msgdata/msg/msg_0485_T06GYM0101.h"
 	.include "asm/macros/script.inc"
@@ -31,6 +32,7 @@
 	ScrDef scr_seq_T06GYM0101_023
 	ScrDef scr_seq_T06GYM0101_024
 	ScrDef scr_seq_T06GYM0101_025
+	ScrDef scr_seq_T06GYM0101_026
 	ScrDefEnd
 
 scr_seq_T06GYM0101_021:
@@ -376,4 +378,55 @@ _043E:
 	CloseMsg
 	ReleaseAll
 	End
+	.balign 4, 0
+
+
+scr_seq_T06GYM0101_026:
+	LockAll
+	NPCMsg msg_0485_T06GYM0101_00015
+	WaitButton
+	CloseMsg
+	HealParty
+	NPCMsg msg_0485_T06GYM0101_00016
+	WaitButton
+	CloseMsg
+	TrainerBattle TRAINER_FIRST_MOVIE_CLONE_VENUSAUR, 0, 0, 0
+	CheckBattleWon VAR_SPECIAL_RESULT
+	Compare VAR_SPECIAL_RESULT, 0
+	GoToIfEq _FM_CLONE_WHITEOUT
+	HealParty
+	NPCMsg msg_0485_T06GYM0101_00017
+	WaitButton
+	CloseMsg
+	TrainerBattle TRAINER_FIRST_MOVIE_CLONE_BLASTOISE, 0, 0, 0
+	CheckBattleWon VAR_SPECIAL_RESULT
+	Compare VAR_SPECIAL_RESULT, 0
+	GoToIfEq _FM_CLONE_WHITEOUT
+	HealParty
+	NPCMsg msg_0485_T06GYM0101_00018
+	WaitButton
+	CloseMsg
+	TrainerBattle TRAINER_FIRST_MOVIE_CLONE_CHARIZARD, 0, 0, 0
+	CheckBattleWon VAR_SPECIAL_RESULT
+	Compare VAR_SPECIAL_RESULT, 0
+	GoToIfEq _FM_CLONE_WHITEOUT
+	HealParty
+	NPCMsg msg_0485_T06GYM0101_00019
+	WaitButton
+	CloseMsg
+	ScreenShake 3, 3, 12, 4
+	PlayCry SPECIES_MEWTWO, 0
+	WaitCry
+	NPCMsg msg_0485_T06GYM0101_00020
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_CLONE_LAB
+	ReleaseAll
+	End
+
+_FM_CLONE_WHITEOUT:
+	WhiteOut
+	ReleaseAll
+	End
+
 	.balign 4, 0
