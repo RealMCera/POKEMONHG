@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_D32R0501.h"
 #include "constants/init_script_types.h"
 	.include "asm/macros/script.inc"
@@ -11,6 +12,7 @@
 	InitScriptEntryEnd
 
 scr_seq_D32R0501_map_scripts_2:
+	InitScriptGoToIfEqual VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_FINAL_BATTLE, _EV_scr_seq_D32R0501_014 + 1
 	InitScriptGoToIfEqual VAR_UNK_4147, 1, _EV_scr_seq_D32R0501_003 + 1
 	InitScriptGoToIfEqual VAR_UNK_4147, 2, _EV_scr_seq_D32R0501_001 + 1
 	InitScriptGoToIfEqual VAR_UNK_4147, 3, _EV_scr_seq_D32R0501_004 + 1
