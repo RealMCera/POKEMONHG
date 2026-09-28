@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/first_movie.h"
 #include "fielddata/script/scr_seq/event_T10R0601.h"
 #include "msgdata/msg/msg_0527_T10R0601.h"
 	.include "asm/macros/script.inc"
@@ -8,6 +9,7 @@
 	ScrDef scr_seq_T10R0601_000
 	ScrDef scr_seq_T10R0601_001
 	ScrDef scr_seq_T10R0601_002
+	ScrDef scr_seq_T10R0601_003
 	ScrDefEnd
 
 scr_seq_T10R0601_001:
@@ -309,4 +311,42 @@ _03BC:
 	WalkFastWest
 	FaceNorth
 	EndMovement
+	.balign 4, 0
+
+
+scr_seq_T10R0601_003:
+	LockAll
+	NPCMsg msg_0527_T10R0601_00012
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0527_T10R0601_00013
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0527_T10R0601_00014
+	WaitButton
+	CloseMsg
+	ScreenShake 2, 2, 8, 3
+	PlayCry SPECIES_MEWTWO, 0
+	WaitCry
+	NPCMsg msg_0527_T10R0601_00015
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0527_T10R0601_00016
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0527_T10R0601_00017
+	WaitButton
+	CloseMsg
+	NPCMsg msg_0527_T10R0601_00018
+	WaitButton
+	CloseMsg
+	SetVar VAR_FIRST_MOVIE_CHAPTER, FIRST_MOVIE_CHAPTER_CLONE_TRIALS
+	FadeScreen 6, 1, 0, RGB_BLACK
+	WaitFade
+	Warp MAP_FIRST_MOVIE_CLONE_ARENA, 0, 5, 14, DIR_NORTH
+	FadeScreen 6, 1, 1, RGB_BLACK
+	WaitFade
+	ReleaseAll
+	End
+
 	.balign 4, 0
