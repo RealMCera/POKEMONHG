@@ -226,27 +226,27 @@
 	</row>
 	<row id="msg_0543_T20R0101_00056" index="56">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">{STRVAR_1 3, 0, 0}!\nGuess what!\rThe person who took the Professor’s\nPokémon has...come back to return it!\rThat’s the last thing I expected!\nGuess what Professor Elm said to him.\r...\n“It seems that your Pokémon already\flikes you so much.\rFor a Pokémon, the best happiness is\nto be with someone it loves.\fI think it should stay with you.”\r...\nIsn’t it moving? It made me cry!\r</language>
+		<language name="English">A voice reaches you through the darkness...\rDistant. Unsteady.\rThen another sound joins it.\nA heartbeat.</language>
 	</row>
 	<row id="msg_0543_T20R0101_00057" index="57">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">The one who took it...\nI mean the red-haired boy\fcame up with the Pokémon.\rBut I saw his face as he passed\nme here. He looked so happy!</language>
+		<language name="English">Scientist: Life signs are stable.\rNeural activity is rising faster\nthan expected.</language>
 	</row>
 	<row id="msg_0543_T20R0101_00058" index="58">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">Lyra: {STRVAR_1 3, 0, 0}!\nDid you already collect eight Badges?\fThat’s so cool!\rThe professor is waiting\nfor you.\r</language>
+		<language name="English">...Where am I?</language>
 	</row>
 	<row id="msg_0543_T20R0101_00059" index="59">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">Ethan: {STRVAR_1 3, 0, 0}!\nDid you already collect eight Badges?\fThat’s so cool!\rThe professor is waiting\nfor you.\r</language>
+		<language name="English">Scientist: Easy.\rYou are safe inside the chamber.\nFor now, just listen.</language>
 	</row>
 	<row id="msg_0543_T20R0101_00060" index="60">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">Professor Elm: Hi, {STRVAR_1 3, 0, 0}!\nYou never cease to amaze me!\rThanks to you, my research is\ngoing great!\rTake this as a token of my\nappreciation.\r</language>
+		<language name="English">Scientist: You were created from the\nrarest genetic material we could find.\rYou may become the most powerful\nPokémon ever known.</language>
 	</row>
 	<row id="msg_0543_T20R0101_00061" index="61">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">Professor Elm: Hi, {STRVAR_1 3, 0, 0}!\nYou never cease to amaze me!\rThanks to you, my research is\ngoing great!\rTake this as a token of my\nappreciation.\r</language>
+		<language name="English">Created...?\rThe word burns through your thoughts.\fThe glass around you begins to shake.</language>
 	</row>
 	<row id="msg_0543_T20R0101_00062" index="62">
 		<attribute name="window_context_name">used</attribute>
