@@ -7,5 +7,6 @@
 
 #define obj_T20R0102_gswoman1                0
 #define obj_T20R0102_gsboy2                  1
+#define obj_T20R0102_first_movie_mewtwo       2
 
 #endif //SCR_SEQ_T20R0102_H_
