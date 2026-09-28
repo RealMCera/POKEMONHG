@@ -16,6 +16,7 @@
 #define _EV_scr_seq_D35R0103_012            12
 #define _EV_scr_seq_D35R0103_013            13
 #define _EV_scr_seq_D35R0103_014            14
+#define _EV_scr_seq_D35R0103_015            15
 
 #define obj_D35R0103_wataru                  0
 #define obj_D35R0103_tsure_poke_static_dragonite     1
