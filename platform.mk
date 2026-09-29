@@ -14,7 +14,16 @@ else
   endif
 endif
 
-ifeq ($(OS),Windows_NT)
+ifneq ($(filter MSYS MINGW32 MINGW64 UCRT64 CLANG64 CLANGARM64,$(MSYSTEM)),)
+  EXE := .exe
+  WINE :=
+  GREP := grep -P
+  SED := sed -r
+  SHA1SUM := sha1sum
+  MKTEMP := mktemp
+  NOWINE := 1
+  WINPATH :=
+else ifeq ($(OS),Windows_NT)
   EXE := .exe
   WINE :=
   GREP := grep -P
