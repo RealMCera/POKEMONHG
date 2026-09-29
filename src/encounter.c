@@ -5,6 +5,7 @@
 #include "constants/battle.h"
 #include "constants/game_stats.h"
 #include "constants/std_script.h"
+#include "constants/trainers.h"
 
 #include "battle/battle_setup.h"
 #include "field/encounter_check.h"
@@ -721,6 +722,14 @@ void SetupAndStartTrainerBattle(TaskManager *taskManager, u32 opponentTrainer1, 
     setup->trainerId[BATTLER_PLAYER2] = followerTrainerNum;
 
     EnemyTrainerSet_Init(setup, fieldSystem->saveData, heapID);
+
+    // During the First Movie prologue the player is Mewtwo, not a trainer
+    // commanding Mewtwo. The battle script uses this flag to omit the player
+    // trainer and Poké Ball send-out presentation.
+    if (opponentTrainer1 == TRAINER_FIRST_MOVIE_TEST_UNIT_A ||
+        opponentTrainer1 == TRAINER_FIRST_MOVIE_TEST_UNIT_B) {
+        setup->battleSpecial |= BATTLE_SPECIAL_FIRST_MOVIE_MEWTWO;
+    }
 
     GameStats_Inc(Save_GameStats_Get(fieldSystem->saveData), GAME_STAT_TRAINER_BATTLES);
 
