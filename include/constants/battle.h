@@ -158,6 +158,7 @@ typedef enum Terrain {
 #define BATTLE_SPECIAL_RECORDED         (1 << 5)
 #define BATTLE_SPECIAL_GIRATINA         (1 << 6)
 #define BATTLE_SPECIAL_DISTORTION_WORLD (1 << 7)
+#define BATTLE_SPECIAL_FIRST_MOVIE_MEWTWO (1 << 8)
 
 // Move Effects Flags
 #define MOVE_EFFECT_FLAG_LEECH_SEED_BATTLER (3 << 0)
