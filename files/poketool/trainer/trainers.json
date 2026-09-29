@@ -34509,7 +34509,7 @@
     {
       "type": "TRTYPE_MON",
       "class": "TRAINERCLASS_SCIENTIST_GS",
-      "name": "{TRNAME}Test Unit A",
+      "name": "{TRNAME}UNIT A",
       "items": [],
       "ai_flags": 1,
       "double": 0,
@@ -34541,7 +34541,7 @@
     {
       "type": "TRTYPE_MON",
       "class": "TRAINERCLASS_SCIENTIST_GS",
-      "name": "{TRNAME}Test Unit B",
+      "name": "{TRNAME}UNIT B",
       "items": [],
       "ai_flags": 33,
       "double": 0,
@@ -34573,7 +34573,7 @@
     {
       "type": "TRTYPE_MON_MOVES",
       "class": "TRAINERCLASS_SCIENTIST_GS",
-      "name": "{TRNAME}Clone Venusaur",
+      "name": "{TRNAME}V-CLONE",
       "items": [],
       "ai_flags": 33,
       "double": 0,
@@ -34603,7 +34603,7 @@
     {
       "type": "TRTYPE_MON_MOVES",
       "class": "TRAINERCLASS_SCIENTIST_GS",
-      "name": "{TRNAME}Clone Blastoise",
+      "name": "{TRNAME}B-CLONE",
       "items": [],
       "ai_flags": 33,
       "double": 0,
@@ -34633,7 +34633,7 @@
     {
       "type": "TRTYPE_MON_MOVES",
       "class": "TRAINERCLASS_SCIENTIST_GS",
-      "name": "{TRNAME}Clone Charizard",
+      "name": "{TRNAME}C-CLONE",
       "items": [],
       "ai_flags": 35,
       "double": 0,
@@ -34663,7 +34663,7 @@
     {
       "type": "TRTYPE_MON_MOVES",
       "class": "TRAINERCLASS_SCIENTIST_GS",
-      "name": "{TRNAME}Clone Venusaur EX",
+      "name": "{TRNAME}V-CLONE EX",
       "items": [],
       "ai_flags": 63,
       "double": 0,
@@ -34693,7 +34693,7 @@
     {
       "type": "TRTYPE_MON_MOVES",
       "class": "TRAINERCLASS_SCIENTIST_GS",
-      "name": "{TRNAME}Clone Blastoise EX",
+      "name": "{TRNAME}B-CLONE EX",
       "items": [],
       "ai_flags": 63,
       "double": 0,
@@ -34723,7 +34723,7 @@
     {
       "type": "TRTYPE_MON_MOVES",
       "class": "TRAINERCLASS_SCIENTIST_GS",
-      "name": "{TRNAME}Clone Charizard EX",
+      "name": "{TRNAME}C-CLONE EX",
       "items": [],
       "ai_flags": 63,
       "double": 0,
