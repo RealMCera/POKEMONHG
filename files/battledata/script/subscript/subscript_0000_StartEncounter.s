@@ -69,6 +69,7 @@ _100:
     GoTo _258
 
 _118:
+    CompareVarToValue OPCODE_FLAG_SET, BSCRIPT_VAR_BATTLE_SYS_STATUS, BATTLE_SPECIAL_FIRST_MOVIE_MEWTWO, _FIRST_MOVIE_MEWTWO
     CompareVarToValue OPCODE_FLAG_SET, BSCRIPT_VAR_BATTLE_SYS_STATUS, BATTLE_SPECIAL_RECORDED, _169
     PlayEncounterAnimation 
     SetTrainerEncounter BATTLER_CATEGORY_ALL
@@ -94,6 +95,32 @@ _118:
     HealthbarSlideInDelay BATTLER_CATEGORY_PLAYER
     Wait 
     FreePartyGaugeGraphics 
+    GoTo _258
+
+_FIRST_MOVIE_MEWTWO:
+    // First Movie prologue: the player directly controls Mewtwo.
+    // Keep the opposing scientist/trainer presentation, but do not create a
+    // player trainer sprite, player party gauge, "Go!" line, or Poké Ball throw.
+    PlayEncounterAnimation
+    SetTrainerEncounter BATTLER_CATEGORY_ENEMY
+    WaitTime 96
+    LoadPartyGaugeGraphics
+    ShowBattleStartPartyGauge BATTLER_CATEGORY_ENEMY
+    PrintEncounterMessage BATTLER_CATEGORY_ENEMY
+    Wait
+    WaitButtonABTime 30
+    PrintFirstSendOutMessage BATTLER_CATEGORY_ENEMY
+    HideBattleStartPartyGauge BATTLER_CATEGORY_ENEMY
+    ThrowPokeball BATTLER_CATEGORY_ENEMY, GAME_THROW_POKE_BALL
+    PokemonSlideIn BATTLER_CATEGORY_ENEMY
+    WaitTime 112
+    HealthbarSlideInDelay BATTLER_CATEGORY_ENEMY
+    Wait
+    PokemonSlideIn BATTLER_CATEGORY_PLAYER
+    WaitTime 96
+    HealthbarSlideInDelay BATTLER_CATEGORY_PLAYER
+    Wait
+    FreePartyGaugeGraphics
     GoTo _258
 
 _169:
