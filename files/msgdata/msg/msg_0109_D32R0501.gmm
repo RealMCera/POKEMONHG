@@ -254,7 +254,7 @@
 	</row>
 	<row id="msg_0109_D32R0501_00063" index="63">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">Pikachu refuses to leave Ash's side.\rOne by one, the fighting Pokémon stop and look toward them.</language>
+		<language name="English">Pikachu refuses to leave Ash's side.\rOne by one, the fighting Pokemon stop and look toward them.</language>
 	</row>
 	<row id="msg_0109_D32R0501_00064" index="64">
 		<attribute name="window_context_name">used</attribute>
