@@ -221,7 +221,7 @@ endif
 
 RESPONSE_TEMPLATE := $(PROJECT_ROOT)/mwldarm.response.template
 ifneq ($(filter MSYS MINGW32 MINGW64 UCRT64 CLANG64 CLANGARM64,$(MSYSTEM)),)
-RESPONSE_TEMPLATE_NT := mwldarm.response.template
+RESPONSE_TEMPLATE_NT := $(WORK_DIR)/mwldarm.response.template
 else
 RESPONSE_TEMPLATE_NT := $(PROJECT_ROOT_NT)/mwldarm.response.template
 endif
