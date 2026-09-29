@@ -47,7 +47,10 @@ else
   endif
 endif
 
-ifeq ($(NOWINE),1)
+ifneq ($(filter MSYS MINGW32 MINGW64 UCRT64 CLANG64 CLANGARM64,$(MSYSTEM)),)
+  WINE :=
+  WINPATH :=
+else ifeq ($(NOWINE),1)
   WINE :=
   WINPATH := wslpath
 else
