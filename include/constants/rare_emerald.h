@@ -26,11 +26,11 @@
 
 /* Temporary map aliases for Build 0.1. */
 #define MAP_RARE_EMERALD_LITTLEROOT_PLAYER_HOUSE MAP_NEW_BARK_PLAYER_HOUSE_1F
-#define MAP_RARE_EMERALD_LITTLEROOT              MAP_NEW_BARK_TOWN
+#define MAP_RARE_EMERALD_LITTLEROOT              MAP_NEW_BARK
 #define MAP_RARE_EMERALD_BIRCH_LAB                MAP_NEW_BARK_ELMS_LAB_1F
 #define MAP_RARE_EMERALD_ROUTE_101                 MAP_ROUTE_29
 #define MAP_RARE_EMERALD_ROUTE_103                 MAP_ROUTE_30
-#define MAP_RARE_EMERALD_OLDALE                    MAP_CHERRYGROVE_CITY
+#define MAP_RARE_EMERALD_OLDALE                    MAP_CHERRYGROVE
 
 /*
  * Dedicated Rare Emerald story slot. Keep this separate from stock HGSS story
