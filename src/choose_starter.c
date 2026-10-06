@@ -2,12 +2,14 @@
 
 #include "constants/balls.h"
 #include "constants/items.h"
+#include "constants/rare_emerald.h"
 #include "constants/species.h"
 
 #include "field_system.h"
 #include "launch_application.h"
 #include "map_header.h"
 #include "pokedex.h"
+#include "save_vars_flags.h"
 #include "screen_fade.h"
 #include "task.h"
 #include "update_dex_received.h"
@@ -84,6 +86,11 @@ static BOOL CreateStarter(TaskManager *taskManager) {
             UpdatePokedexWithReceivedSpecies(fieldSystem->saveData, myChoice);
         }
         Pokedex_SetMonCaughtFlag(pokedex, Party_GetMonByIndex(party, 0));
+
+        // Keep Rare Emerald progression in a dedicated save variable so the
+        // campaign remains independent of stock HGSS scene variables.
+        *Save_VarsFlags_GetVarAddr(Save_VarsFlags_Get(fieldSystem->saveData), VAR_RARE_EMERALD_CHAPTER) = RARE_EMERALD_CHAPTER_STARTER_SELECTED;
+
         env->state = 4;
         FieldSystem_LoadFieldOverlay(fieldSystem);
         break;
