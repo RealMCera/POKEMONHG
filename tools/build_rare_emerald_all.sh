@@ -44,6 +44,24 @@ fi
 
 [ -f "$MWASM" ] || fail "mwasmarm.exe is still missing after toolchain setup"
 
+# Reuse the Nintendo/NitroSDK command-line tools used by the linker/ROM packer.
+# Copy the whole local bin directory so makelcf, makerom, makebanner, ntrcomp,
+# and any related helpers are available together rather than failing one by one.
+FIRST_MOVIE_BIN="$FIRST_MOVIE_ROOT/tools/bin"
+if [ ! -f "$ROOT/tools/bin/makelcf.exe" ]; then
+  if [ -d "$FIRST_MOVIE_BIN" ]; then
+    echo "Reusing local First Movie NitroSDK tools/bin..."
+    mkdir -p "$ROOT/tools/bin"
+    cp -r "$FIRST_MOVIE_BIN"/* "$ROOT/tools/bin/" || fail "Could not copy First Movie tools/bin"
+  else
+    fail "Missing tools/bin/makelcf.exe and no First Movie tools/bin found at $FIRST_MOVIE_BIN"
+  fi
+fi
+
+for sdktool in makelcf.exe makerom.exe makebanner.exe; do
+  [ -f "$ROOT/tools/bin/$sdktool" ] || fail "tools/bin/$sdktool is missing after NitroSDK tool setup"
+done
+
 # NitroSDK linker templates are also local/proprietary build dependencies and
 # are intentionally not tracked in git. Reuse the copies from the working
 # First Movie checkout when they are absent here.
