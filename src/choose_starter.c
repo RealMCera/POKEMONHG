@@ -42,10 +42,12 @@ static BOOL CreateStarter(TaskManager *taskManager) {
             break;
         }
         {
+            // Rare Emerald keeps the native HGSS starter-selection overlay,
+            // but swaps Johto's trio for Emerald's Treecko/Torchic/Mudkip trio.
             const int species[] = {
-                SPECIES_CHIKORITA,
-                SPECIES_CYNDAQUIL,
-                SPECIES_TOTODILE,
+                SPECIES_TREECKO,
+                SPECIES_TORCHIC,
+                SPECIES_MUDKIP,
             };
             mapsec = MapHeader_GetMapSec(fieldSystem->location->mapId); // sp14
 
