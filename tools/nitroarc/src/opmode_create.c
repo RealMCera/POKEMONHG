@@ -19,7 +19,6 @@
 #include <assert.h>
 #include <dirent.h>
 #include <errno.h>
-#include <fnmatch.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -55,6 +54,7 @@ static int collect_explicit_files(const char *fdata, packcfg_t *out_cfg);
 static int collect_implicit_files(strvec_t *files, const strvec_t *excls, size_t *out_nexpls);
 static int pack_archive(packcfg_t *cfg, void **out_data, size_t *out_size);
 static int write_index(const char *fname, bool index, bool namespace, const strvec_t *files);
+static bool glob_match(const char *pattern, const char *text);
 
 #define HIT_DOTORDER  (1 << 0)
 #define HIT_DOTIGNORE (1 << 1)
@@ -310,9 +310,36 @@ errcleanup:
     return errc;
 }
 
+static bool glob_match(const char *pattern, const char *text) {
+    while (*pattern) {
+        if (*pattern == '*') {
+            while (*pattern == '*') pattern++;
+            if (*pattern == '\0') return true;
+            while (*text) {
+                if (glob_match(pattern, text)) return true;
+                text++;
+            }
+            return false;
+        }
+
+        if (*pattern == '?') {
+            if (*text == '\0') return false;
+            pattern++;
+            text++;
+            continue;
+        }
+
+        if (*pattern != *text) return false;
+        pattern++;
+        text++;
+    }
+
+    return *text == '\0';
+}
+
 static bool should_exclude(const char *name, const strvec_t *excls) {
     for (size_t i = 0; i < excls->size; i++) {
-        if (fnmatch(excls->data[i], name, 0) == 0) return true;
+        if (glob_match(excls->data[i], name)) return true;
     }
 
     return false;
