@@ -77,7 +77,7 @@ int load_file(const char *path, char **out_buf, size_t *out_size) {
     char *buf  = NULL;
     int   errc = open_file(path, "rb", &f);
     if (errc) return errc;
-    if (!f)   return PROGRAM_EGENERAL; // NOTE: Only to silence the compiler
+    if (!f)   return PROGRAM_EGENERAL;
 
     fseek(f, 0, SEEK_END);
     long fsize = ftell(f);
@@ -96,8 +96,8 @@ int load_file(const char *path, char **out_buf, size_t *out_size) {
         goto cleanup;
     }
 
-    long nread = fread(buf, 1, fsize, f);
-    if (nread != fsize) {
+    size_t nread = fread(buf, 1, (size_t)fsize, f);
+    if (nread != (size_t)fsize) {
         progerr("I/O failure for file '%s': %s", path, strerror(errno));
         errc = PROGRAM_EFILEIO;
         goto cleanup;
@@ -140,7 +140,11 @@ int set_logfile(bool verbose) {
 int ensure_mkdir(const char *path) {
     if (path == NULL || path[0] == 0) return PROGRAM_ENONE;
 
+#ifdef _WIN32
+    if (mkdir(path) == -1) {
+#else
     if (mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) == -1) {
+#endif
         if (errno != EEXIST) {
             progerr("could not create directory '%s': %s", path, strerror(errno));
             return PROGRAM_EGENERAL;
@@ -172,7 +176,7 @@ int write_file(const char *path, void *data, size_t size) {
     FILE *f  = NULL;
     int errc = open_file(path, "wb", &f);
     if (errc) return errc;
-    if (!f)   return PROGRAM_EGENERAL; // NOTE: Only to silence the compiler
+    if (!f)   return PROGRAM_EGENERAL;
 
     if (fwrite(data, 1, size, f) != size) {
         progerr("partial write failure for file '%s': %s", path, strerror(errno));
