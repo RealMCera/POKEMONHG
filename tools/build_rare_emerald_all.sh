@@ -24,24 +24,49 @@ fail() {
   exit 1
 }
 
-# Reuse the already-working First Movie Metrowerks toolchain when this fresh
-# Rare Emerald checkout does not have it locally. This directory is intentionally
-# not stored in git.
+# Reuse the already-working First Movie proprietary/local build dependencies
+# when this fresh Rare Emerald checkout does not have them. None of these files
+# are committed to git.
+FIRST_MOVIE_ROOT="/c/Users/FrontDesk/Downloads/PokemonFirstMovieHGSS"
 MWASM="$ROOT/tools/mwccarm/2.0/sp2p2/mwasmarm.exe"
-FIRST_MOVIE="/c/Users/FrontDesk/Downloads/PokemonFirstMovieHGSS/tools/mwccarm"
+FIRST_MOVIE_MWCC="$FIRST_MOVIE_ROOT/tools/mwccarm"
 
 if [ ! -f "$MWASM" ]; then
   echo "Metrowerks tools are missing from this checkout."
-  if [ -d "$FIRST_MOVIE" ]; then
+  if [ -d "$FIRST_MOVIE_MWCC" ]; then
     echo "Reusing local First Movie toolchain..."
     mkdir -p "$ROOT/tools/mwccarm"
-    cp -r "$FIRST_MOVIE"/* "$ROOT/tools/mwccarm/" || fail "Could not copy First Movie mwccarm tools"
+    cp -r "$FIRST_MOVIE_MWCC"/* "$ROOT/tools/mwccarm/" || fail "Could not copy First Movie mwccarm tools"
   else
-    fail "Missing tools/mwccarm and no First Movie toolchain found at $FIRST_MOVIE"
+    fail "Missing tools/mwccarm and no First Movie toolchain found at $FIRST_MOVIE_MWCC"
   fi
 fi
 
 [ -f "$MWASM" ] || fail "mwasmarm.exe is still missing after toolchain setup"
+
+# NitroSDK linker templates are also local/proprietary build dependencies and
+# are intentionally not tracked in git. Reuse the copies from the working
+# First Movie checkout when they are absent here.
+for template in ARM9-TS.lcf.template mwldarm.response.template; do
+  if [ ! -f "$ROOT/$template" ] && [ -f "$FIRST_MOVIE_ROOT/$template" ]; then
+    echo "Reusing local First Movie $template..."
+    cp "$FIRST_MOVIE_ROOT/$template" "$ROOT/$template" || fail "Could not copy $template"
+  fi
+done
+
+if [ ! -f "$ROOT/sub/ARM7-TS.lcf.template" ]; then
+  if [ -f "$FIRST_MOVIE_ROOT/sub/ARM7-TS.lcf.template" ]; then
+    echo "Reusing local First Movie ARM7-TS.lcf.template..."
+    cp "$FIRST_MOVIE_ROOT/sub/ARM7-TS.lcf.template" "$ROOT/sub/ARM7-TS.lcf.template" || fail "Could not copy ARM7-TS.lcf.template"
+  elif [ -f "$FIRST_MOVIE_ROOT/ARM7-TS.lcf.template" ]; then
+    echo "Reusing local First Movie ARM7-TS.lcf.template..."
+    cp "$FIRST_MOVIE_ROOT/ARM7-TS.lcf.template" "$ROOT/sub/ARM7-TS.lcf.template" || fail "Could not copy ARM7-TS.lcf.template"
+  fi
+fi
+
+[ -f "$ROOT/ARM9-TS.lcf.template" ] || fail "ARM9-TS.lcf.template is missing; copy it from the working First Movie HGSS project"
+[ -f "$ROOT/mwldarm.response.template" ] || fail "mwldarm.response.template is missing; copy it from the working First Movie HGSS project"
+[ -f "$ROOT/sub/ARM7-TS.lcf.template" ] || fail "sub/ARM7-TS.lcf.template is missing; copy it from the working First Movie HGSS project"
 
 echo "[1/5] Building host tools..."
 make tools || fail "Host tools failed"
