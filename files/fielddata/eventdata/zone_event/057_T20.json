@@ -79,7 +79,7 @@
     },
     {
       "id": "obj_T20_gsbigman",
-      "spriteId": "SPRITE_GSBIGMAN",
+      "spriteId": "SPRITE_GSBIGMAN1",
       "movement": 3,
       "type": 0,
       "eventFlag": "FLAG_NOTHING",
@@ -252,16 +252,6 @@
     }
   ],
   "coords": [
-    {
-      "scriptId": "_EV_scr_seq_T20_002 + 1",
-      "x": 676,
-      "z": 396,
-      "w": 1,
-      "h": 7,
-      "y": 0,
-      "val": 0,
-      "var": "VAR_SCENE_NEW_BARK_WEST_EXIT"
-    },
     {
       "scriptId": "_EV_scr_seq_T20_010 + 1",
       "x": 688,
