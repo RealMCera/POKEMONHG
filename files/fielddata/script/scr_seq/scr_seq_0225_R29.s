@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/rare_emerald.h"
 #include "fielddata/script/scr_seq/event_R29.h"
 #include "msgdata/msg/msg_0373_R29.h"
 	.include "asm/macros/script.inc"
@@ -17,6 +18,12 @@
 	ScrDefEnd
 
 scr_seq_R29_000:
+	Compare VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_INTRO
+	GoToIfEq _RareEmeraldRoute101Setup
+	Compare VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_LITTLEROOT
+	GoToIfEq _RareEmeraldRoute101Setup
+	Compare VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_ROUTE_101
+	GoToIfEq _RareEmeraldRoute101Setup
 	GetFriendSprite VAR_OBJ_1
 	CheckBadge BADGE_ZEPHYR, VAR_TEMP_x4000
 	Compare VAR_TEMP_x4000, 1
@@ -34,6 +41,11 @@ _0043:
 _005E:
 	SetFlag FLAG_UNK_207
 _0062:
+	End
+
+_RareEmeraldRoute101Setup:
+	SetVar VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_ROUTE_101
+	SetVar VAR_UNK_408B, 1
 	End
 
 scr_seq_R29_003:
@@ -123,6 +135,8 @@ _019E:
 	End
 
 scr_seq_R29_001:
+	Compare VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_ROUTE_101
+	GoToIfEq _RareEmeraldBirchRescue
 	ScrCmd_609
 	LockAll
 	PlayCry SPECIES_MARILL, 0
@@ -319,6 +333,19 @@ _04DC:
 	SetFlag FLAG_HIDE_ROUTE_29_MARILL
 	SetVar VAR_UNK_408B, 0
 	SetFlag FLAG_UNK_09A
+	ReleaseAll
+	End
+
+_RareEmeraldBirchRescue:
+	ScrCmd_609
+	LockAll
+	SetVar VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_BIRCH_RESCUE
+	PlayCry RARE_EMERALD_BIRCH_ZIGZAGOON_SPECIES, 0
+	WaitCry
+	ChooseStarter
+	WildBattle RARE_EMERALD_BIRCH_ZIGZAGOON_SPECIES, RARE_EMERALD_BIRCH_ZIGZAGOON_LEVEL, 0
+	SetVar VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_FIRST_BATTLE
+	SetVar VAR_UNK_408B, 0
 	ReleaseAll
 	End
 
