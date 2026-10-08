@@ -2,6 +2,7 @@
 #define POKEHEARTGOLD_CONSTANTS_RARE_EMERALD_H
 
 #include "constants/maps.h"
+#include "constants/species.h"
 
 /*
  * Rare Emerald campaign state.
@@ -83,9 +84,30 @@
 #define MAP_RARE_EMERALD_OLDALE                    MAP_CHERRYGROVE
 
 /*
- * Dedicated Rare Emerald story slot. Keep this separate from stock HGSS story
- * variables and from the First Movie campaign variable.
+ * Dedicated Rare Emerald story slots. Keep these separate from stock HGSS
+ * story variables and from the First Movie campaign variable.
+ *
+ * 0x40FE was the original Rare Emerald campaign slot and must remain stable.
+ * The adjacent currently-unknown stock slots are reserved here for the
+ * vertical slice so starter/rival state persists through save/reload.
  */
-#define VAR_RARE_EMERALD_CHAPTER 0x40FE
+#define VAR_RARE_EMERALD_RIVAL_SPECIES 0x40FC
+#define VAR_RARE_EMERALD_STARTER       0x40FD
+#define VAR_RARE_EMERALD_CHAPTER       0x40FE
+
+#define RARE_EMERALD_STARTER_NONE    0
+#define RARE_EMERALD_STARTER_TREECKO SPECIES_TREECKO
+#define RARE_EMERALD_STARTER_TORCHIC SPECIES_TORCHIC
+#define RARE_EMERALD_STARTER_MUDKIP  SPECIES_MUDKIP
+
+/* Emerald first-rival counter-pick relationship. */
+#define RARE_EMERALD_RIVAL_FOR_TREECKO SPECIES_TORCHIC
+#define RARE_EMERALD_RIVAL_FOR_TORCHIC SPECIES_MUDKIP
+#define RARE_EMERALD_RIVAL_FOR_MUDKIP  SPECIES_TREECKO
+
+#define RARE_EMERALD_BIRCH_ZIGZAGOON_SPECIES SPECIES_ZIGZAGOON
+#define RARE_EMERALD_BIRCH_ZIGZAGOON_LEVEL   2
+#define RARE_EMERALD_STARTER_LEVEL            5
+#define RARE_EMERALD_FIRST_RIVAL_LEVEL        5
 
 #endif // POKEHEARTGOLD_CONSTANTS_RARE_EMERALD_H
