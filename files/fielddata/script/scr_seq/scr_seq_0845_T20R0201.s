@@ -89,10 +89,6 @@ scr_seq_T20R0201_006:
 	Wait 30, VAR_SPECIAL_RESULT
 	ApplyMovement obj_T20R0201_gsmama, _00B8
 	WaitMovement
-	CallStd std_play_mom_music
-	Wait 30, VAR_SPECIAL_RESULT
-	ApplyMovement obj_T20R0201_gsmama, _00B8
-	WaitMovement
 	BufferPlayersName 0
 	NPCMsg msg_0545_T20R0201_00033
 	CloseMsg
