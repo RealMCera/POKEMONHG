@@ -10,14 +10,15 @@
  * Rare Emerald - Littleroot Town shell
  *
  * New Bark Town currently supplies the native HGSS map/field engine while the
- * Hoenn map assets are migrated.  The stock New Bark story scripts are not
+ * Hoenn map assets are migrated. The stock New Bark story scripts are not
  * allowed to run on this branch: they are HeartGold progression and were
  * masking the Rare Emerald campaign during normal play.
  *
- * Script 002 is the existing west-exit coordinate event.  During a new Rare
+ * Script 002 is the existing west-exit coordinate event. During a new Rare
  * Emerald save it now acts as the first playable Emerald milestone: initialize
  * campaign state, present the native DS starter chooser, run Birch's Zigzagoon
- * rescue battle, and hand control back with the story in the Birch Lab phase.
+ * rescue battle, register the starter with the native HGSS story state, and
+ * move the player into Birch's Lab.
  */
 
 	ScrDef scr_seq_T20_000
@@ -41,7 +42,7 @@
 	ScrDefEnd
 
 /* Temporary NPC/object interactions are intentionally inert until their
- * Hoenn replacements are installed.  Keeping all script slots defined keeps
+ * Hoenn replacements are installed. Keeping all script slots defined keeps
  * the existing New Bark event table valid while preventing Johto story leaks.
  */
 scr_seq_T20_000:
@@ -63,11 +64,15 @@ _RareEmeraldLittlerootExit:
 	PlayCry RARE_EMERALD_BIRCH_ZIGZAGOON_SPECIES, 0
 	WaitCry
 	ChooseStarter
+	SetFlag FLAG_GOT_STARTER
+	GetPartyMonSpecies 0, VAR_TEMP_x4001
+	SetStarterChoice VAR_TEMP_x4001
 	WildBattle RARE_EMERALD_BIRCH_ZIGZAGOON_SPECIES, RARE_EMERALD_BIRCH_ZIGZAGOON_LEVEL, 0
 	SetVar VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_FIRST_BATTLE
 	SetVar VAR_SCENE_NEW_BARK_WEST_EXIT, 1
 	SetFlag FLAG_HIDE_NEW_BARK_TOWN_MOM
 	SetVar VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_BIRCH_LAB
+	Warp MAP_RARE_EMERALD_BIRCH_LAB, 0, 4, 13, DIR_NORTH
 	ReleaseAll
 	End
 
