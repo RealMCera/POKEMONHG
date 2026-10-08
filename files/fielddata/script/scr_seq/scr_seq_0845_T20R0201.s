@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/rare_emerald.h"
 #include "fielddata/script/scr_seq/event_T20R0201.h"
 #include "msgdata/msg/msg_0545_T20R0201.h"
 	.include "asm/macros/script.inc"
@@ -15,6 +16,7 @@
 	ScrDefEnd
 
 scr_seq_T20R0201_000:
+	SetVar VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_LITTLEROOT
 	ScrCmd_609
 	LockAll
 	ApplyMovement obj_player, _00A4
@@ -82,6 +84,10 @@ scr_seq_T20R0201_006:
 	LockAll
 	ApplyMovement obj_player, _00A4
 	ApplyMovement obj_T20R0201_gsmama, _00B0
+	WaitMovement
+	CallStd std_play_mom_music
+	Wait 30, VAR_SPECIAL_RESULT
+	ApplyMovement obj_T20R0201_gsmama, _00B8
 	WaitMovement
 	CallStd std_play_mom_music
 	Wait 30, VAR_SPECIAL_RESULT
