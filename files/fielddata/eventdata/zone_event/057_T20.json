@@ -79,7 +79,7 @@
     },
     {
       "id": "obj_T20_gsbigman",
-      "spriteId": "SPRITE_GSBIGMAN1",
+      "spriteId": "SPRITE_GSBIGMAN",
       "movement": 3,
       "type": 0,
       "eventFlag": "FLAG_NOTHING",
