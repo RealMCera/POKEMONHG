@@ -60,7 +60,7 @@ static BOOL CreateStarter(TaskManager *taskManager) {
                 Pokemon *mon = &env->args->starters[i];
                 PlayerProfile *profile = Save_PlayerData_GetProfile(fieldSystem->saveData);
                 ZeroMonData(mon);
-                CreateMon(mon, species[i], 5, 32, FALSE, 0, OT_ID_PLAYER_ID, 0);
+                CreateMon(mon, species[i], RARE_EMERALD_STARTER_LEVEL, 32, FALSE, 0, OT_ID_PLAYER_ID, 0);
                 sub_020720FC(mon, profile, BALL_POKE, mapsec, 12, HEAP_ID_FIELD2);
                 {
                     int item = ITEM_NONE;
@@ -80,16 +80,34 @@ static BOOL CreateStarter(TaskManager *taskManager) {
         break;
     case 3: {
         Pokedex *pokedex = Save_Pokedex_Get(fieldSystem->saveData);
+        SaveVarsFlags *varsFlags = Save_VarsFlags_Get(fieldSystem->saveData);
         party = SaveArray_Party_Get(fieldSystem->saveData);
         Pokemon *myChoice = &env->args->starters[env->args->cursorPos];
+        u16 starterSpecies = GetMonData(myChoice, MON_DATA_SPECIES, NULL);
+        u16 rivalSpecies = RARE_EMERALD_STARTER_NONE;
+
         if (Party_AddMon(party, myChoice)) {
             UpdatePokedexWithReceivedSpecies(fieldSystem->saveData, myChoice);
         }
         Pokedex_SetMonCaughtFlag(pokedex, Party_GetMonByIndex(party, 0));
 
-        // Keep Rare Emerald progression in a dedicated save variable so the
-        // campaign remains independent of stock HGSS scene variables.
-        *Save_VarsFlags_GetVarAddr(Save_VarsFlags_Get(fieldSystem->saveData), VAR_RARE_EMERALD_CHAPTER) = RARE_EMERALD_CHAPTER_STARTER_SELECTED;
+        switch (starterSpecies) {
+        case RARE_EMERALD_STARTER_TREECKO:
+            rivalSpecies = RARE_EMERALD_RIVAL_FOR_TREECKO;
+            break;
+        case RARE_EMERALD_STARTER_TORCHIC:
+            rivalSpecies = RARE_EMERALD_RIVAL_FOR_TORCHIC;
+            break;
+        case RARE_EMERALD_STARTER_MUDKIP:
+            rivalSpecies = RARE_EMERALD_RIVAL_FOR_MUDKIP;
+            break;
+        }
+
+        // Persist the actual chosen Hoenn starter and Emerald's counter-pick so
+        // Route 103 and later rival battles do not depend on HGSS scene state.
+        *Save_VarsFlags_GetVarAddr(varsFlags, VAR_RARE_EMERALD_STARTER) = starterSpecies;
+        *Save_VarsFlags_GetVarAddr(varsFlags, VAR_RARE_EMERALD_RIVAL_SPECIES) = rivalSpecies;
+        *Save_VarsFlags_GetVarAddr(varsFlags, VAR_RARE_EMERALD_CHAPTER) = RARE_EMERALD_CHAPTER_STARTER_SELECTED;
 
         env->state = 4;
         FieldSystem_LoadFieldOverlay(fieldSystem);
