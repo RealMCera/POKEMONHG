@@ -39,7 +39,17 @@ patch_once(
 # Littleroot shell. Do not try to stack the older incremental T20 patches on
 # top of that conversion: their anchors intentionally no longer exist.
 t20_relpath = "files/fielddata/script/scr_seq/scr_seq_0842_T20.s"
-t20_text = (ROOT / t20_relpath).read_text(encoding="utf-8")
+t20_path = ROOT / t20_relpath
+t20_text = t20_path.read_text(encoding="utf-8")
+
+# Self-heal stale working trees produced by an older Rare Emerald patch that
+# used a non-existent flag identifier. The live event data uses
+# FLAG_HIDE_NEW_BARK_MOM.
+if "FLAG_HIDE_NEW_BARK_TOWN_MOM" in t20_text:
+    t20_text = t20_text.replace("FLAG_HIDE_NEW_BARK_TOWN_MOM", "FLAG_HIDE_NEW_BARK_MOM")
+    t20_path.write_text(t20_text, encoding="utf-8")
+    print(f"[Rare Emerald] repaired stale New Bark mom flag: {t20_relpath}")
+
 if "Rare Emerald - Littleroot Town shell" in t20_text:
     print(f"[Rare Emerald] Littleroot shell already converted: {t20_relpath}")
 else:
