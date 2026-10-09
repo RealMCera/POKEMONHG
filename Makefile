@@ -32,6 +32,7 @@ HEADER_TEMPLATE := $(buildname)/rom_header_template.sbin
 MAKEFLAGS += --no-print-directory
 
 all:
+	python tools/rare_emerald/prepatch_starter.py
 	python tools/rare_emerald/apply_source_patches.py
 	$(MAKE) tools
 	$(MAKE) patch_mwasmarm
