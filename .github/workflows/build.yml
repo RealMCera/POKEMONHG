@@ -53,6 +53,9 @@ jobs:
         with:
           swap-size-gb: 19
 
+      - name: Normalize Rare Emerald source
+        run: python tools/rare_emerald/prepatch_starter.py
+
       - name: Build Rare Emerald (HeartGold base)
         env:
           GAME_VERSION: HEARTGOLD
