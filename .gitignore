@@ -107,3 +107,6 @@ compile_commands.json
 __pycache__
 .venv/
 *.pyc
+
+# Rare Emerald local ROM-derived import cache
+.rare_emerald/
