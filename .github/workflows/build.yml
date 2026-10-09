@@ -5,6 +5,10 @@ on:
     branches: [rare-emerald]
   workflow_dispatch:
 
+concurrency:
+  group: rare-emerald-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   LM_LICENSE_FILE: "$GITHUB_WORKSPACE/tools/mwccarm/license.dat"
   CC: gcc-10
