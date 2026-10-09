@@ -14,7 +14,6 @@ env:
   CC: gcc-10
   CXX: g++-10
   COMPARE: 0
-  WINEPREFIX: /home/runner/.wine
   WINEDEBUG: -all
 
 jobs:
@@ -26,7 +25,7 @@ jobs:
         run: |
           sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
           sudo apt update
-          sudo apt -y --allow-downgrades install g++-10-multilib linux-libc-dev binutils-arm-none-eabi p7zip-full pkg-config libpugixml-dev ppa-purge xvfb
+          sudo apt -y --allow-downgrades install g++-10-multilib linux-libc-dev binutils-arm-none-eabi p7zip-full pkg-config libpugixml-dev ppa-purge
           sudo ppa-purge -y ppa:ubuntu-toolchain-r/test || true
           sudo dpkg --add-architecture i386
           sudo mkdir -pm755 /etc/apt/keyrings
@@ -34,16 +33,14 @@ jobs:
           sudo add-apt-repository ppa:cybermax-dexter/sdl2-backport
           sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/$(lsb_release -cs)/winehq-$(lsb_release -cs).sources
           sudo apt update
-          sudo apt -y --allow-downgrades install --install-recommends winehq-stable
+          WINE_VERSION='10.0.0.0~jammy-1'
+          apt-cache madison winehq-stable wine-stable wine-stable-amd64 wine-stable-i386 || true
+          sudo apt -y --allow-downgrades install --install-recommends \
+            "winehq-stable=${WINE_VERSION}" \
+            "wine-stable=${WINE_VERSION}" \
+            "wine-stable-amd64=${WINE_VERSION}" \
+            "wine-stable-i386:i386=${WINE_VERSION}"
           wine --version
-
-      - name: Initialize Wine runtime
-        run: |
-          rm -rf "$WINEPREFIX"
-          xvfb-run -a wineboot --init
-          wineserver -w
-          xvfb-run -a wine cmd /c ver
-          test -f "$WINEPREFIX/drive_c/windows/system32/kernel32.dll"
 
       - name: Checkout Repo
         uses: actions/checkout@v4
