@@ -14,11 +14,10 @@
  * allowed to run on this branch: they are HeartGold progression and were
  * masking the Rare Emerald campaign during normal play.
  *
- * Script 002 is the existing west-exit coordinate event. During a new Rare
- * Emerald save it now acts as the first playable Emerald milestone: initialize
- * campaign state, present the native DS starter chooser, run Birch's Zigzagoon
- * rescue battle, register the starter with the native HGSS story state, and
- * move the player into Birch's Lab.
+ * Script 009 is an outdoor scene hook that runs on the New Bark/Littleroot
+ * shell. During the opening Rare Emerald chapter it starts Birch's rescue
+ * immediately after the player reaches the outdoor map. Script 002 remains a
+ * west-exit fallback so the event cannot be missed.
  */
 
 	ScrDef scr_seq_T20_000
@@ -41,10 +40,6 @@
 	ScrDef scr_seq_T20_017
 	ScrDefEnd
 
-/* Temporary NPC/object interactions are intentionally inert until their
- * Hoenn replacements are installed. Keeping all script slots defined keeps
- * the existing New Bark event table valid while preventing Johto story leaks.
- */
 scr_seq_T20_000:
 	End
 
@@ -74,8 +69,8 @@ _RareEmeraldLittlerootExit:
 	SetVar VAR_SCENE_NEW_BARK_WEST_EXIT, 1
 	SetFlag FLAG_HIDE_NEW_BARK_MOM
 	SetVar VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_BIRCH_LAB
-	Warp MAP_RARE_EMERALD_BIRCH_LAB, 0, 4, 13, DIR_NORTH
 	ReleaseAll
+	Warp MAP_RARE_EMERALD_BIRCH_LAB, 0, 4, 13, DIR_NORTH
 	End
 
 scr_seq_T20_003:
@@ -101,6 +96,8 @@ scr_seq_T20_008:
 	End
 
 scr_seq_T20_009:
+	Compare VAR_RARE_EMERALD_CHAPTER, RARE_EMERALD_CHAPTER_LITTLEROOT
+	GoToIfEq _RareEmeraldLittlerootExit
 	End
 
 scr_seq_T20_010:
