@@ -34,6 +34,7 @@ MAKEFLAGS += --no-print-directory
 all:
 	python tools/rare_emerald/prepatch_starter.py
 	python tools/rare_emerald/apply_source_patches.py
+	python tools/rare_emerald/apply_gameplay_v4.py
 	$(MAKE) tools
 	$(MAKE) patch_mwasmarm
 	$(MAKE) $(ROM)
