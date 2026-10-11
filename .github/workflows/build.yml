@@ -73,7 +73,10 @@ jobs:
           GAME_VERSION: HEARTGOLD
           GAME_LANGUAGE: ENGLISH
           GAME_REVISION: 0
-        run: make -j4 2> >(sed -r 's/^/::error::/')
+        shell: bash
+        run: |
+          set -o pipefail
+          make -j4 2>&1 | tee rare-emerald-build.log
 
       - name: Upload Rare Emerald ROM artifact
         if: success()
@@ -87,7 +90,12 @@ jobs:
       - name: Post error archive
         if: failure()
         continue-on-error: true
-        run: find . -maxdepth 2 -type d \( -name build -or -name files \) -exec tar -czvhf failure.tar.gz {} +
+        shell: bash
+        run: |
+          targets=(rare-emerald-build.log)
+          [[ -d build ]] && targets+=(build)
+          [[ -d files ]] && targets+=(files)
+          tar -czvhf failure.tar.gz "${targets[@]}"
 
       - name: Post error upload
         if: failure()
