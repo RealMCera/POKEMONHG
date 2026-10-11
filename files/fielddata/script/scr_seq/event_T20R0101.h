@@ -17,6 +17,7 @@
 #define _EV_scr_seq_T20R0101_013 13
 #define _EV_scr_seq_T20R0101_014 14
 #define _EV_scr_seq_T20R0101_015 15
+#define _EV_scr_seq_T20R0101_016 16
 
 #define obj_T20R0101_doctor     0
 #define obj_T20R0101_policeman  1
