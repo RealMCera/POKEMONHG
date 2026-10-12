@@ -36,6 +36,7 @@ all:
 	python tools/rare_emerald/apply_source_patches.py
 	python tools/rare_emerald/apply_gameplay_v5.py
 	python tools/rare_emerald/apply_gameplay_v6.py
+	python tools/rare_emerald/apply_gameplay_v7.py
 	$(MAKE) tools
 	$(MAKE) patch_mwasmarm
 	$(MAKE) $(ROM)
