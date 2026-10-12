@@ -105,12 +105,21 @@ replace_once(
 )
 
 event_hdr = "files/fielddata/script/scr_seq/event_T20R0101.h"
-replace_once(
-    event_hdr,
-    "#define _EV_scr_seq_T20R0101_016            16\n",
-    "#define _EV_scr_seq_T20R0101_016            16\n#define _EV_scr_seq_T20R0101_017            17\n",
-    "_EV_scr_seq_T20R0101_017",
-)
+event_hdr_path = ROOT / event_hdr
+event_hdr_text = event_hdr_path.read_text(encoding="utf-8")
+if "_EV_scr_seq_T20R0101_017" in event_hdr_text:
+    print(f"[Rare Emerald V6] already fixed: {event_hdr} (_EV_scr_seq_T20R0101_017)")
+else:
+    pat = re.compile(r'(^#define\s+_EV_scr_seq_T20R0101_016\s+16\s*$)', re.M)
+    match = pat.search(event_hdr_text)
+    if not match:
+        raise SystemExit(
+            f"[Rare Emerald V6] event header anchor not found in {event_hdr}: _EV_scr_seq_T20R0101_016"
+        )
+    insert = match.group(1) + "\n#define _EV_scr_seq_T20R0101_017 17"
+    event_hdr_text = event_hdr_text[:match.start()] + insert + event_hdr_text[match.end():]
+    event_hdr_path.write_text(event_hdr_text, encoding="utf-8")
+    print(f"[Rare Emerald V6] fixed: {event_hdr} (_EV_scr_seq_T20R0101_017)")
 
 lab_script = "files/fielddata/script/scr_seq/scr_seq_0843_T20R0101.s"
 replace_once(
